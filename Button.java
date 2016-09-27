@@ -5,29 +5,19 @@ public class Button extends Actor
 {
     public Button()
     {
-        addImage("Begin to play...");
+        GreenfootImage image = new GreenfootImage("play_button.png");
+        image.scale(170,170);
+        setImage(image);
     }
-     
-    
-    public void setText(String text)
-    {
-        addImage("Begin to play...");
-    }
-     
-    private void addImage(String text)
-    {
-        setImage(new GreenfootImage("Begin to play...", 25, Color.white, Color.black ));
-    }
-    
     
     public void act() 
     {
         if(Greenfoot.mouseClicked(this))
         {
-            
+            Greenfoot.setWorld(new GamePlayWorld());
         } 
         if(Greenfoot.mousePressed(this)){
-         
+          Greenfoot.setWorld(new GamePlayWorld());
         }
     }
 }

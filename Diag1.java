@@ -3,8 +3,8 @@ import greenfoot.*;
 /**
  * Write a description of class Diag1 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Green Techies 
+ * @version 1.1
  */
 public class Diag1  extends Actor 
 {

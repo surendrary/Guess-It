@@ -2,10 +2,6 @@
 comment0.target=Button
 comment1.params=
 comment1.target=Button()
-comment2.params=text
-comment2.target=void\ setText(java.lang.String)
-comment3.params=text
-comment3.target=void\ addImage(java.lang.String)
-comment4.params=
-comment4.target=void\ act()
-numComments=5
+comment2.params=
+comment2.target=void\ act()
+numComments=3

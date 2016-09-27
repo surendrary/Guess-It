@@ -7,8 +7,8 @@ import java.awt.Font;
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Green Techies 
+ * @version 1.0
  */
 public class GuessItWorld extends World
 {
@@ -19,13 +19,8 @@ public class GuessItWorld extends World
      */
     public GuessItWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(850, 650, 1); 
-        
-        
         setUpGame();
-
-        //String inputValue = JOptionPane.showInputDialog("Please input a value");
         prepare();
     }
 
@@ -35,9 +30,7 @@ public class GuessItWorld extends World
      */
     private void setUpGame()
     {
-//        GreenfootImage img = new 
-        
-        setBackground(new GreenfootImage("black-wallpaper-textured-background.jpg"));   
+        setBackground(new GreenfootImage("home_page_Background.jpg"));   
 
         getBackground().setColor(Color.red);
         getBackground().setFont(new Font("", Font.BOLD, 50));

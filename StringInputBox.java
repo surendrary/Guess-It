@@ -3,7 +3,7 @@ import java.awt.Color;
  
 public class StringInputBox extends Actor
 {
-    static final int MAX_INPUT_LENGTH = 20;
+    static final int NAME_INPUT_LENGTH = 20;
     String text = "Enter your name";
      
     public StringInputBox()
@@ -14,7 +14,7 @@ public class StringInputBox extends Actor
      
     private void updateImage()
     {
-        GreenfootImage image = new GreenfootImage(15*MAX_INPUT_LENGTH, 30);
+        GreenfootImage image = new GreenfootImage(15*NAME_INPUT_LENGTH, 30);
         image.setColor(new Color(128, 0, 0));
         image.fill();
         image.setColor(Color.lightGray);
@@ -38,7 +38,7 @@ public class StringInputBox extends Actor
         if ("backspace".equals(key) && text.length() > 0) text = text.substring(0, text.length() - 1);
         if ("escape".equals(key)) text = "";
         if ("space".equals(key)) key = " ";
-        if (key.length() == 1 && text.length() < MAX_INPUT_LENGTH) text += key;
+        if (key.length() == 1 && text.length() < NAME_INPUT_LENGTH) text += key;
         updateImage();
     }
 }

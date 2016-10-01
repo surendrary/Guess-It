@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author Green Techies 
  * @version 1.1
  */
-public class Diag1  extends Actor 
+public class GameDiagram  extends Actor 
 {
     // instance variables - replace the example below with your own
     private int x;
@@ -14,8 +14,10 @@ public class Diag1  extends Actor
     /**
      * Constructor for objects of class Diag1
      */
-    public Diag1()
+    public GameDiagram()
     {
+        GreenfootImage image = new GreenfootImage("image_operands.png");
+        setImage(image);
     }
 
     /**

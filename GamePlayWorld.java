@@ -12,13 +12,15 @@ import java.awt.Font;
 public class GamePlayWorld extends World
 {
 
+    String playerName = "";
     /**
      * Constructor for objects of class GamePlayWorld.
      * 
      */
-    public GamePlayWorld()
+    public GamePlayWorld(String playerName)
     {    
-       super(850, 650, 1); 
+       super(850, 650, 1);
+       this.playerName = playerName;
        setUpGame();
     }
     
@@ -28,10 +30,14 @@ public class GamePlayWorld extends World
      */
     private void setUpGame()
     {
-        setBackground(new GreenfootImage("home_page_Background.jpg"));   
+        GreenfootImage backgroundImage = new GreenfootImage("home_page_Background.jpg");
+        setBackground(backgroundImage); 
         getBackground().setColor(Color.red);
         getBackground().setFont(new Font("", Font.BOLD, 50));
-        getBackground().drawString("Guess It!!", 380, 70);
+        getBackground().drawString("GUESS IT", backgroundImage.getWidth()/2, 70);
+        getBackground().drawString(this.playerName, (backgroundImage.getWidth()), 170);
         Greenfoot.setSpeed(50);
+        
+        GameEngine gameEngine = new GameEngine(this.playerName);
     }
 }

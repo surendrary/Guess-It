@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=Diag1
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Diag1\ here.\r\n\ \r\n\ @author\ Green\ Techies\ \r\n\ @version\ (a\ version\ number\ or\ a\ date\r\n
+comment0.target=GameDiagram
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Diag1\ here.\r\n\ \r\n\ @author\ Green\ Techies\ \r\n\ @version\ 1.1\r\n
 comment1.params=
-comment1.target=Diag1()
+comment1.target=GameDiagram()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Diag1\r\n
 comment2.params=y
 comment2.target=int\ sampleMethod(int)

@@ -1,12 +1,13 @@
 import greenfoot.*;
 import java.awt.Color;
+import javax.swing.JOptionPane;
  
 public class Button extends Actor
 {
     public Button()
     {
         GreenfootImage image = new GreenfootImage("play_button.png");
-        image.scale(170,170);
+        //image.scale(170,170);
         setImage(image);
     }
     
@@ -14,10 +15,12 @@ public class Button extends Actor
     {
         if(Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new GamePlayWorld());
+            String userName = JOptionPane.showInputDialog("Enter Name");
+            Greenfoot.setWorld(new GamePlayWorld(userName));
         } 
         if(Greenfoot.mousePressed(this)){
-          Greenfoot.setWorld(new GamePlayWorld());
+           String userName = JOptionPane.showInputDialog("Enter Name");
+           Greenfoot.setWorld(new GamePlayWorld(userName));
         }
     }
 }

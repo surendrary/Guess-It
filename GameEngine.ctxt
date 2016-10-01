@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=GameEngine
+comment0.text=\r\n\ This\ is\ the\ central\ class\ for\ implenting\ the\ Game\r\n\ \r\n\ @author\ Green\ Techies\r\n\ @version\ 1.0\r\n
+comment1.params=playerName
+comment1.target=GameEngine(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameEngine\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+numComments=3

@@ -35,7 +35,10 @@ public class GamePlayWorld extends World
         getBackground().setColor(Color.red);
         getBackground().setFont(new Font("", Font.BOLD, 50));
         getBackground().drawString("GUESS IT", backgroundImage.getWidth()/2, 70);
-        getBackground().drawString(this.playerName, (backgroundImage.getWidth()), 170);
+        
+        getBackground().setFont(new Font("", Font.BOLD, 25));
+        getBackground().drawString(this.playerName+",start guessing!", (backgroundImage.getWidth()/2), 100);
+        
         Greenfoot.setSpeed(50);
         
         GameEngine gameEngine = new GameEngine(this.playerName);

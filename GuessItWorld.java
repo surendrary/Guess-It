@@ -53,6 +53,5 @@ public class GuessItWorld extends World
 
 public void act() 
     {
-//String inputValue = JOptionPane.showInputDialog("Please input a name");
 }
 }

@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.Random;
 
 /**
  * This is the central class for implenting the Game
@@ -9,7 +10,7 @@ import greenfoot.*;
 public class GameEngine extends Actor 
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int computerGuess;
     public String playerName = "";
 
     /**
@@ -18,6 +19,8 @@ public class GameEngine extends Actor
     public GameEngine(String playerName)
     {
       this.playerName = playerName;
+      Random random = new Random();
+      computerGuess = random.nextInt(100)+2;
     }
 
     /**

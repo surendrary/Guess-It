@@ -44,6 +44,10 @@ public class GamePlayWorld extends World
         addObject(LessThan,100,200);
         GreaterThanButton GreaterThan=new GreaterThanButton();
         addObject(GreaterThan,250,200);
+        Equals equals = new Equals();
+        addObject(equals, 400, 200);
+        Mod mod = new Mod();
+        addObject(mod,550,200);
         
         addObject(new StringInputBox(), getWidth()/2, (getHeight()/2)-50);
         

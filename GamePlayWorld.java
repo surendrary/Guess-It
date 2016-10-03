@@ -36,6 +36,13 @@ public class GamePlayWorld extends World
         getBackground().setFont(new Font("", Font.BOLD, 50));
         getBackground().drawString("GUESS IT", backgroundImage.getWidth()/2, 70);
         
+        //RUSHIN-----------------------------for name in top left
+        getBackground().setFont(new Font("", Font.BOLD, 25));
+        getBackground().drawString(this.playerName, 5,30);
+        getBackground().drawLine(0,35,100,35);
+        getBackground().drawLine(100,0,100,35);
+        
+        
         getBackground().setFont(new Font("", Font.BOLD, 25));
         getBackground().drawString(this.playerName+",start guessing!", (backgroundImage.getWidth()/2), 100);
         

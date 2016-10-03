@@ -40,6 +40,10 @@ public class GamePlayWorld extends World
         getBackground().drawString(this.playerName+",start guessing!", (backgroundImage.getWidth()/2), 100);
         
         Greenfoot.setSpeed(50);
+        LessThanButton LessThan=new LessThanButton();
+        addObject(LessThan,100,200);
+        GreaterThanButton GreaterThan=new GreaterThanButton();
+        addObject(GreaterThan,250,200);
         
         GameEngine gameEngine = new GameEngine(this.playerName);
     }

@@ -1,22 +1,21 @@
 import greenfoot.*;
-
 /**
- * Write a description of class Diag1 here.
+ * Write a description of class LessThanButton here.
  * 
- * @author Green Techies 
- * @version 1.1
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class GameDiagram  extends Actor 
+public class LessThanButton extends Actor
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class Diag1
+     * Constructor for objects of class LessThanButton
      */
-    public GameDiagram()
+    public LessThanButton()
     {
-        GreenfootImage image = new GreenfootImage("image_operands.png");
+        GreenfootImage image = new GreenfootImage("less than.png");
         setImage(image);
     }
 

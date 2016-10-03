@@ -4,7 +4,7 @@ import java.awt.Color;
 public class StringInputBox extends Actor
 {
     static final int NAME_INPUT_LENGTH = 20;
-    String text = "Enter your name";
+    String text = "";
      
     public StringInputBox()
     {
@@ -14,20 +14,21 @@ public class StringInputBox extends Actor
      
     private void updateImage()
     {
-        GreenfootImage image = new GreenfootImage(15*NAME_INPUT_LENGTH, 30);
-        image.setColor(new Color(128, 0, 0));
+        GreenfootImage image = new GreenfootImage(300, 30);
+        image.setColor(Color.white);
         image.fill();
-        image.setColor(Color.lightGray);
-        //image.fillRect(3, 3, image.getWidth()-6, 24);
         GreenfootImage textImage = new GreenfootImage(text, 24, Color.black, null);
-        image.drawImage(textImage, (image.getWidth()-textImage.getWidth())/2, 15-textImage.getHeight()/2);
+        image.drawImage(textImage, 30, 5);
         setImage(image);
     }
  
     public void act()
     {
         String key = Greenfoot.getKey();
-        if (key == null) return;
+        
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        
+       if (key == null) return;
         if ("enter".equals(key) && text.length() > 0)
         {
             System.out.println("You entered String "+text);
@@ -38,7 +39,10 @@ public class StringInputBox extends Actor
         if ("backspace".equals(key) && text.length() > 0) text = text.substring(0, text.length() - 1);
         if ("escape".equals(key)) text = "";
         if ("space".equals(key)) key = " ";
-        if (key.length() == 1 && text.length() < NAME_INPUT_LENGTH) text += key;
+        if (key.length() == 1 && text.length() < NAME_INPUT_LENGTH ){
+                        if( this.getX()-150 < mouse.getX() &&  mouse.getX() < this.getX()+150 && getWorld().getHeight()/2 > mouse.getY() && mouse.getY()> this.getY() -60)
+                           text += key;                        
+        }    
         updateImage();
     }
 }

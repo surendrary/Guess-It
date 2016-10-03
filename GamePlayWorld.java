@@ -45,6 +45,8 @@ public class GamePlayWorld extends World
         GreaterThanButton GreaterThan=new GreaterThanButton();
         addObject(GreaterThan,250,200);
         
+        addObject(new StringInputBox(), getWidth()/2, (getHeight()/2)-50);
+        
         GameEngine gameEngine = new GameEngine(this.playerName);
     }
 }

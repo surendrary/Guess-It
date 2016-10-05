@@ -13,6 +13,12 @@ public class GamePlayWorld extends World
 {
 
     String playerName = "";
+    public static String operator = ""; // select operators i.e. >,<,/
+    public static int enteredNumber;
+    public static StringInputBox inputBox= new StringInputBox();
+    public static GameEngine gameEngine= null;
+    public static int numberOfGuess = 0;
+    
     /**
      * Constructor for objects of class GamePlayWorld.
      * 
@@ -38,9 +44,13 @@ public class GamePlayWorld extends World
         
         //RUSHIN-----------------------------for name in top left
         getBackground().setFont(new Font("", Font.BOLD, 25));
-        getBackground().drawString(this.playerName, 5,30);
+        getBackground().drawString(this.playerName,5,30);
         getBackground().drawLine(0,35,100,35);
         getBackground().drawLine(100,0,100,35);
+        
+        //For GuessCounter
+        getBackground().setFont(new Font("", Font.BOLD, 25));
+        getBackground().drawString("Guess"+ this.numberOfGuess,getWidth()-200,30);
         
         
         getBackground().setFont(new Font("", Font.BOLD, 25));
@@ -56,8 +66,16 @@ public class GamePlayWorld extends World
         Mod mod = new Mod();
         addObject(mod,550,200);
         
-        addObject(new StringInputBox(), getWidth()/2, (getHeight()/2)-50);
+        inputBox = new StringInputBox();
+        addObject(inputBox, getWidth()/2, (getHeight()/2)-50);
         
-        GameEngine gameEngine = new GameEngine(this.playerName);
+        //Add guess and Query button
+        QueryButton  queryButton = new QueryButton();
+        addObject(queryButton,getWidth()/4,(getHeight()-150));
+        
+        GuessButton guessButton = new GuessButton();
+        addObject(guessButton,(3*getWidth())/4,(getHeight()-150));
+        
+        gameEngine = new GameEngine(this.playerName);
     }
 }

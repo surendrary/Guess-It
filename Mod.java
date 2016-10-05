@@ -19,8 +19,11 @@ public class Mod extends Actor
         setImage(image);
     }
     
-    public void act() 
+        public void act()
     {
-        // Add your action code here.
+      MouseInfo mouseInfo = Greenfoot.getMouseInfo();
+      if(Greenfoot.mouseClicked(this)){
+          getWorldOfType(GamePlayWorld.class).operator="mod";
+      }   
     }    
 }

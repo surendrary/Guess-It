@@ -1,5 +1,6 @@
 import greenfoot.*;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  * This is the central class for implenting the Game
@@ -11,6 +12,8 @@ public class GameEngine extends Actor
 {
     // instance variables - replace the example below with your own
     private int computerGuess;
+    public static int enterendInput;
+    public static String chosedOperation = null;
     public String playerName = "";
 
     /**
@@ -32,6 +35,23 @@ public class GameEngine extends Actor
     public void act()
     {
         //
+    }
+    
+    public boolean query(){
+        boolean queryResult = false;
+        JOptionPane.showMessageDialog(null, "Only integer input is allowed! " + chosedOperation +" "+ enterendInput);
+        switch(chosedOperation){
+          case "gt":
+           queryResult = (enterendInput > computerGuess);
+           break;
+          case "lt":
+           queryResult = (enterendInput < computerGuess);
+           break;
+          case "mod":
+           queryResult =(computerGuess % enterendInput) == 0;
+           break;
+        }
+        return queryResult;
     }
     
     

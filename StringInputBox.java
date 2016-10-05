@@ -1,10 +1,12 @@
 import greenfoot.*;
 import java.awt.Color;
+import javax.swing.JOptionPane;
  
 public class StringInputBox extends Actor
 {
     static final int NAME_INPUT_LENGTH = 20;
     String text = "";
+    int inputNumber;
      
     public StringInputBox()
     {
@@ -31,7 +33,6 @@ public class StringInputBox extends Actor
        if (key == null) return;
         if ("enter".equals(key) && text.length() > 0)
         {
-            System.out.println("You entered String "+text);
             text = "";
             updateImage();
             return;
@@ -44,5 +45,12 @@ public class StringInputBox extends Actor
                            text += key;                        
         }    
         updateImage();
+        try{
+            inputNumber = Integer.parseInt(text);
+            getWorldOfType(GamePlayWorld.class).enteredNumber = inputNumber;
+        }
+        catch(NumberFormatException nfException){
+               JOptionPane.showMessageDialog(null, "Only integer input is allowed!");
+        } 
     }
 }

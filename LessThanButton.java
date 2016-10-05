@@ -19,15 +19,11 @@ public class LessThanButton extends Actor
         setImage(image);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+        public void act()
     {
-        // put your code here
-        return x + y;
+      MouseInfo mouseInfo = Greenfoot.getMouseInfo();
+      if(Greenfoot.mouseClicked(this)){
+          getWorldOfType(GamePlayWorld.class).operator="lt";
+        }   
     }
 }

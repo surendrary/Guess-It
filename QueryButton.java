@@ -28,6 +28,11 @@ public class QueryButton extends Actor
           gameEngine.enterendInput = getWorldOfType(GamePlayWorld.class).enteredNumber;
           boolean isRightQuery = gameEngine.query();
           getWorldOfType(GamePlayWorld.class).numberOfGuess +=1;
+          
+          //gets the string box object and clears it for next input. @rushin
+          StringInputBox sb=getWorldOfType(GamePlayWorld.class).getObjects(StringInputBox.class).get(0);
+          sb.clearText();
+          
           if(isRightQuery){
             Message sampleMessage = new Message();
             sampleMessage.setText("Right, Continue Guessing!!");

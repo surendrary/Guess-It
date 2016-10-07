@@ -53,4 +53,15 @@ public class StringInputBox extends Actor
         } 
 
     }
+    
+     /**
+     *@rushin 
+     * Function to clear text once the search button has been clicked
+    */
+    public void clearText()
+    {
+            text = "";
+            updateImage();
+            return;
+        }
 }

@@ -37,11 +37,15 @@ public class QueryButton extends Actor
             Message sampleMessage = new Message();
             sampleMessage.setText("Right, Continue Guessing!!");
             getWorld().addObject(sampleMessage, 300, 300); 
+            Greenfoot.delay(50);
+            getWorld().removeObject(sampleMessage);
            }
           else{
             Message sampleMessage = new Message();
             sampleMessage.setText(" No, Continue Guessing!!");
             getWorld().addObject(sampleMessage, 300, 300);
+            Greenfoot.delay(50);
+            getWorld().removeObject(sampleMessage); 
             } 
           // Now Remove all static variable values and also clears the text filed 
           World world = getWorld();

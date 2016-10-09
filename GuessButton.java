@@ -22,6 +22,25 @@ public class GuessButton extends Actor
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
           getWorldOfType(GamePlayWorld.class).operator="guess";
+          GameEngine gameEngine = getWorldOfType(GamePlayWorld.class).gameEngine;
+          gameEngine.enterendInput = getWorldOfType(GamePlayWorld.class).enteredNumber;
+          gameEngine.computerGuess = getWorldOfType(GamePlayWorld.class).computerGuess;
+          if(gameEngine.enterendInput==gameEngine.computerGuess){
+            Message sampleMessage = new Message();
+            sampleMessage.setText("Cogratulations!!!!.Your Guess is Right");
+            getWorld().addObject(sampleMessage, 300, 300);
+          }
+          else{
+              
+            Message sampleMessage = new Message();
+            sampleMessage.setText("Sorry. Your guess is wrong");
+            getWorld().addObject(sampleMessage, 300, 300);
+            Greenfoot.delay(50);
+            getWorld().removeObject(sampleMessage);
+            Greenfoot.setWorld(new GameOver());
+            
+            
+          }
         }   
     }  
 }

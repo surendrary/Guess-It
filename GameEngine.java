@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public class GameEngine extends Actor 
 {
     // instance variables - replace the example below with your own
-    private int computerGuess;
+    public int computerGuess;
     public static int enterendInput;
     public static String chosedOperation = null;
     public String playerName = "";
@@ -24,6 +24,7 @@ public class GameEngine extends Actor
       this.playerName = playerName;
       Random random = new Random();
       computerGuess = random.nextInt(100)+2;
+      getWorldOfType(GamePlayWorld.class).computerGuess = computerGuess;
     }
 
     /**

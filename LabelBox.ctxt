@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=LabelBox
+comment1.params=
+comment1.target=LabelBox()
+comment2.params=text
+comment2.target=void\ updateImage(java.lang.String)
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ clearText()
+comment4.text=\r\n@rushin\ \r\n\ Function\ to\ clear\ text\ once\ the\ search\ button\ has\ been\ clicked\r\n
+numComments=5

@@ -26,7 +26,7 @@ public class Button extends Actor
             }
         else{
             Greenfoot.setWorld(new GamePlayWorld(userName));
-            saveUser(userName);
+            //saveUser(userName);
             }
         }
     }

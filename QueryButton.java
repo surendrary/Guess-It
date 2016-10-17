@@ -26,6 +26,9 @@ public class QueryButton extends Actor
           GameEngine gameEngine = getWorldOfType(GamePlayWorld.class).gameEngine;
           gameEngine.chosedOperation = getWorldOfType(GamePlayWorld.class).operator;
           gameEngine.enterendInput = getWorldOfType(GamePlayWorld.class).enteredNumber;
+          if(getWorldOfType(GamePlayWorld.class).operator == "" )
+            JOptionPane.showMessageDialog(null, "Please select a operator");
+          else{
           boolean isRightQuery = gameEngine.query();
           getWorldOfType(GamePlayWorld.class).numberOfGuess +=1;
           
@@ -51,7 +54,7 @@ public class QueryButton extends Actor
           World world = getWorld();
           getWorldOfType(GamePlayWorld.class).operator = "";
           getWorldOfType(GamePlayWorld.class).enteredNumber =0;
-          
+        }
         }  
     }      
 }

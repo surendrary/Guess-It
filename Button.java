@@ -25,7 +25,7 @@ public class Button extends Actor
                JOptionPane.showMessageDialog(null, "Username is mandatory to start game");
             }
         else{
-            Greenfoot.setWorld(new GamePlayWorld(userName));
+            Greenfoot.setWorld(new GameTypeSelect(userName));
             //saveUser(userName);
             }
         }

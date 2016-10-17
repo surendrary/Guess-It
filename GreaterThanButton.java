@@ -31,6 +31,9 @@ public class GreaterThanButton extends Actor
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
           getWorldOfType(GamePlayWorld.class).operator="gt";
+          LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
+          box.updateImage("greater than");
         }   
+        
     }
 }

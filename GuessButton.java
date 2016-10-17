@@ -41,6 +41,8 @@ public class GuessButton extends Actor
             
             
           }
+          LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
+          box.updateImage("");
         }   
     }  
 }

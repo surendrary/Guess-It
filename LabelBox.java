@@ -14,13 +14,13 @@ public class LabelBox extends TextBox
         text = "";
     }
      
-    private void updateImage(String text)
+    public void updateImage(String text)
     {
         GreenfootImage image = new GreenfootImage(200, 30);
         image.setColor(Color.white);
         image.fill();
-        GreenfootImage textImage = new GreenfootImage(text, 200, Color.black, null);
-        image.drawImage(textImage, 200, 5);
+        GreenfootImage textImage = new GreenfootImage(text, 20, Color.black, null);
+        image.drawImage(textImage, 20, 5);
         setImage(image);
     }
  

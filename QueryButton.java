@@ -54,6 +54,8 @@ public class QueryButton extends Actor
           World world = getWorld();
           getWorldOfType(GamePlayWorld.class).operator = "";
           getWorldOfType(GamePlayWorld.class).enteredNumber =0;
+          LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
+          box.updateImage("");
         }
         }  
     }      

@@ -44,13 +44,15 @@ public class QueryButton extends Actor
             getWorld().addObject(sampleMessage, 300, 300); 
             Greenfoot.delay(50);
             getWorld().removeObject(sampleMessage);
+            getWorldOfType(GamePlayWorld.class).UpdateGuess();
            }
           else{
             Message sampleMessage = new Message();
             sampleMessage.setText(" No, Continue Guessing!!");
             getWorld().addObject(sampleMessage, 300, 300);
             Greenfoot.delay(50);
-            getWorld().removeObject(sampleMessage); 
+            getWorld().removeObject(sampleMessage);
+            getWorldOfType(GamePlayWorld.class).UpdateGuess(); 
             } 
           // Now Remove all static variable values and also clears the text filed 
           World world = getWorld();

@@ -32,19 +32,19 @@ public class GamePlayWorld extends World
        setUpGame();
     }
     
-	 //
-    public void updateGuessNumber()
+     //
+    /*public void updateGuessNumber()
     {
         this.numberOfGuess+=1;
         System.out.println("new value:"+this.numberOfGuess);
-    }
+    }*/
     
     public int getnumberguess()
     {
         return this.numberOfGuess;
     }
     
-	
+    
     /**
      * Prepare the world for the start of the program. That is: create the initial
      * objects and add them to the world.
@@ -64,8 +64,12 @@ public class GamePlayWorld extends World
         getBackground().drawLine(100,0,100,35);
         
         //For GuessCounter
-        getBackground().setFont(new Font("", Font.BOLD, 25));
-        getBackground().drawString("Guess"+this.getnumberguess(),getWidth()-200,30);
+        //getBackground().setFont(new Font("", Font.BOLD, 25));
+        ///getBackground().drawString("Guess"+this.getnumberguess(),getWidth()-200,30);
+        
+        Message Score = new Message();
+        Score.setImage(new GreenfootImage("Guess: " + numberOfGuess, 34, Color.RED, Color.BLACK));
+        this.addObject(Score,getWidth()-100,30);
          
 
         
@@ -99,6 +103,13 @@ public class GamePlayWorld extends World
         
         //update number to zero on lo
         this.numberOfGuess = 0;
+    }
+    
+    public void UpdateGuess(){ 
+    
+        Message Score = new Message();
+        Score.setImage(new GreenfootImage("Guess : " + numberOfGuess, 34, Color.RED, Color.BLACK));
+        this.addObject(Score,getWidth()-100,30);
     }
 }
     

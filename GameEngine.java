@@ -40,13 +40,13 @@ public class GameEngine extends Actor
     
     public boolean query(){
         boolean queryResult = false;
-       // JOptionPane.showMessageDialog(null, "Only integer input is allowed! " + chosedOperation +" "+ enterendInput);
+        JOptionPane.showMessageDialog(null, "Only integer input is allowed! " + chosedOperation +" "+ enterendInput +" "+computerGuess);
         switch(chosedOperation){
           case "gt":
-           queryResult = (enterendInput > computerGuess);
+           queryResult = (computerGuess > enterendInput);
            break;
           case "lt":
-           queryResult = (enterendInput < computerGuess);
+           queryResult = (computerGuess < enterendInput);
            break;
           case "mod":
            queryResult =(computerGuess % enterendInput) == 0;

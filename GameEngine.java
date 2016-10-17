@@ -12,7 +12,7 @@ public class GameEngine extends Actor
 {
     // instance variables - replace the example below with your own
     public int computerGuess;
-    public static int enterendInput;
+    public static int enterendInput = 0;
     public static String chosedOperation = null;
     public String playerName = "";
 

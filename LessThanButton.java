@@ -25,7 +25,7 @@ public class LessThanButton extends Actor
       if(Greenfoot.mouseClicked(this)){
           getWorldOfType(GamePlayWorld.class).operator="lt";
           LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
-          box.updateImage("less than");
+          box.updateImage("Less Than");
         }   
     }
 }

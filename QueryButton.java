@@ -28,6 +28,8 @@ public class QueryButton extends Actor
           gameEngine.enterendInput = getWorldOfType(GamePlayWorld.class).enteredNumber;
           if(getWorldOfType(GamePlayWorld.class).operator == "" )
             JOptionPane.showMessageDialog(null, "Please select a operator");
+          else if(gameEngine.enterendInput <1 )
+            JOptionPane.showMessageDialog(null, "Please Enter a number");
           else{
           boolean isRightQuery = gameEngine.query();
           getWorldOfType(GamePlayWorld.class).numberOfGuess +=1;

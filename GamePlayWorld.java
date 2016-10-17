@@ -14,7 +14,7 @@ public class GamePlayWorld extends World
 
     String playerName = "";
     public static String operator = ""; // select operators i.e. >,<,/
-    public static int enteredNumber;
+    public static int enteredNumber = 0;
     public static int computerGuess;
     public static StringInputBox inputBox= new StringInputBox();
     public static LabelBox label= new LabelBox();

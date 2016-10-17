@@ -32,7 +32,7 @@ public class GreaterThanButton extends Actor
       if(Greenfoot.mouseClicked(this)){
           getWorldOfType(GamePlayWorld.class).operator="gt";
           LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
-          box.updateImage("greater than");
+          box.updateImage("Greater Than");
         }   
         
     }

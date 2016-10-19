@@ -24,7 +24,6 @@ public class SinglePlayer extends Actor
       if(Greenfoot.mousePressed(this)){
            Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameTypeSelect.class).playerName));
             getWorldOfType(GameTypeSelect.class).gametype="single";
-            System.out.println("singleplayer game initiated");
             }
         }
     }      

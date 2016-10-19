@@ -40,18 +40,25 @@ public class GameEngine extends Actor
     
     public boolean query(){
         boolean queryResult = false;
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("Guessed Number ");
         //JOptionPane.showMessageDialog(null, "Only integer input is allowed! " + chosedOperation +" "+ enterendInput +" "+computerGuess);
         switch(chosedOperation){
           case "gt":
            queryResult = (computerGuess > enterendInput);
+           queryBuilder.append("> " + enterendInput);
            break;
           case "lt":
            queryResult = (computerGuess < enterendInput);
+           queryBuilder.append("< " + enterendInput);
            break;
           case "mod":
            queryResult =(computerGuess % enterendInput) == 0;
+           queryBuilder.append(" / by " + enterendInput);
            break;
         }
+        JOptionPane.showMessageDialog(null, "query" +queryBuilder +" "+queryResult);
+        getWorldOfType(GamePlayWorld.class).previousQueryResultMap.put(queryBuilder.toString(),queryResult);
         return queryResult;
     }
     

@@ -2,6 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 import javax.swing.*;
 import java.awt.Font;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Write a description of class GamePlayWorld here.
@@ -20,6 +22,8 @@ public class GamePlayWorld extends World
     public static LabelBox label= new LabelBox();
     public static GameEngine gameEngine= null;
     public static int numberOfGuess = 0;
+    public static QueryResultBox queryResultBox = new QueryResultBox();
+    public static Map<String,Boolean> previousQueryResultMap = new HashMap<String,Boolean>();
     
     /**
      * Constructor for objects of class GamePlayWorld.
@@ -70,8 +74,6 @@ public class GamePlayWorld extends World
         Message Score = new Message();
         Score.setImage(new GreenfootImage("Guess: " + numberOfGuess, 34, Color.RED, Color.BLACK));
         this.addObject(Score,getWidth()-100,30);
-         
-
         
         getBackground().setFont(new Font("", Font.BOLD, 25));
         getBackground().drawString(this.playerName+",start guessing!", (backgroundImage.getWidth()/2), 100);
@@ -81,27 +83,33 @@ public class GamePlayWorld extends World
         addObject(LessThan,100,200);
         GreaterThanButton GreaterThan=new GreaterThanButton();
         addObject(GreaterThan,250,200);
-        Equals equals = new Equals();
-        addObject(equals, 400, 200);
         Mod mod = new Mod();
-        addObject(mod,550,200);
+        addObject(mod,400,200);
         
         label = new LabelBox();
-        addObject(label, getWidth()/2-150, (getHeight()/2)-50);
+        addObject(label, getWidth()/2-230, (getHeight()/2)+10);
         
         inputBox = new StringInputBox();
         addObject(inputBox, getWidth()/2-10, (getHeight()/2)-50);
         
         //Add guess and Query button
         QueryButton  queryButton = new QueryButton();
-        addObject(queryButton,getWidth()/4,(getHeight()-150));
+        addObject(queryButton,getWidth()/2-290,(getHeight()-150));
         
         GuessButton guessButton = new GuessButton();
-        addObject(guessButton,(3*getWidth())/4,(getHeight()-150));
+        addObject(guessButton,getWidth()/2-80,(getHeight()-150));
+        
+        //Add lebel "Previous Query"
+        Message queryResult = new Message();
+        queryResult.setImage(new GreenfootImage("Previous Query Result", 25, Color.RED, Color.BLACK));
+        this.addObject(queryResult,getWidth()-200,getHeight()-465);
+        
+        //Add Text Area to track previous queries
+        addObject(queryResultBox, getWidth()-200, getHeight()-300);
         
         gameEngine = new GameEngine(this.playerName);
         
-        //update number to zero on lo
+        //update number to zero on load
         this.numberOfGuess = 0;
     }
     

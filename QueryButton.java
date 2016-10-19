@@ -1,6 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import javax.swing.JOptionPane;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Write a description of class QueryButton here.
@@ -16,6 +17,7 @@ public class QueryButton extends Actor
     public QueryButton()
     {
         GreenfootImage image = new GreenfootImage("query.png");
+        image.scale(140,140);
         setImage(image);
     }
 
@@ -60,6 +62,15 @@ public class QueryButton extends Actor
           getWorldOfType(GamePlayWorld.class).enteredNumber =0;
           LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
           box.updateImage("");
+          
+          //Upadte Query Result
+          QueryResultBox resultBox = getWorldOfType(GamePlayWorld.class).getObjects(QueryResultBox.class).get(0);
+          StringBuilder queryTest = new StringBuilder();
+          for(Map.Entry<String,Boolean> entrySet :getWorldOfType(GamePlayWorld.class).previousQueryResultMap.entrySet()){
+              queryTest.append(entrySet.getKey() +" : "+entrySet.getValue());
+              queryTest.append("\n");
+            }
+          resultBox.updateImage(queryTest.toString());  
         }
         }  
     }      

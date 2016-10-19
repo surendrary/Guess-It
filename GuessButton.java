@@ -14,6 +14,7 @@ public class GuessButton extends Actor
     public GuessButton()
     {
         GreenfootImage image = new GreenfootImage("guess.png");
+        image.scale(90,90);
         setImage(image);
     }
 

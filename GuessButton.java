@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import javax.swing.JOptionPane;
 /**
  * Write a description of class GuessButton here.
  * 
@@ -26,7 +26,10 @@ public class GuessButton extends Actor
           GameEngine gameEngine = getWorldOfType(GamePlayWorld.class).gameEngine;
           gameEngine.enterendInput = getWorldOfType(GamePlayWorld.class).enteredNumber;
           gameEngine.computerGuess = getWorldOfType(GamePlayWorld.class).computerGuess;
-          if(gameEngine.enterendInput==gameEngine.computerGuess){
+          gameEngine.computerGuess = getWorldOfType(GamePlayWorld.class).computerGuess;
+          if(gameEngine.enterendInput <1 )
+            JOptionPane.showMessageDialog(null, "Please Enter a number to guess");
+          else if(gameEngine.enterendInput==gameEngine.computerGuess){
             Message sampleMessage = new Message();
             sampleMessage.setText("Cogratulations!!!!.Your Guess is Right");
             getWorld().addObject(sampleMessage, 300, 300);

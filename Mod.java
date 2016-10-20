@@ -23,6 +23,7 @@ public class Mod extends Actor
     {
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
+          Greenfoot.playSound("button_click.mp3");
           getWorldOfType(GamePlayWorld.class).operator="mod";
           LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
           box.updateImage("Divisible By");

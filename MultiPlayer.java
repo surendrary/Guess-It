@@ -22,6 +22,7 @@ public class MultiPlayer extends Actor
     public void act()
     {
      if(Greenfoot.mousePressed(this)){
+            Greenfoot.playSound("button_click.mp3");
             Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameTypeSelect.class).playerName));
             getWorldOfType(GameTypeSelect.class).gametype="multi";
             System.out.println("multiplayer game initiated");

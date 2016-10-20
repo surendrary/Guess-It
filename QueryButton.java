@@ -17,7 +17,7 @@ public class QueryButton extends Actor
     public QueryButton()
     {
         GreenfootImage image = new GreenfootImage("query.png");
-        image.scale(140,140);
+        image.scale(90,90);
         setImage(image);
     }
 
@@ -25,6 +25,7 @@ public class QueryButton extends Actor
     {
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
+          Greenfoot.playSound("button_click.mp3");
           GameEngine gameEngine = getWorldOfType(GamePlayWorld.class).gameEngine;
           gameEngine.chosedOperation = getWorldOfType(GamePlayWorld.class).operator;
           gameEngine.enterendInput = getWorldOfType(GamePlayWorld.class).enteredNumber;

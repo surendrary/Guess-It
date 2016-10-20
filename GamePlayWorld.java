@@ -57,9 +57,11 @@ public class GamePlayWorld extends World
     {
         GreenfootImage backgroundImage = new GreenfootImage("home_page_Background.jpg");
         setBackground(backgroundImage); 
-        getBackground().setColor(Color.red);
-        getBackground().setFont(new Font("", Font.BOLD, 50));
-        getBackground().drawString("GUESS IT", backgroundImage.getWidth()/2, 70);
+        //getBackground().setColor(Color.red);
+        //getBackground().setFont(new Font("", Font.BOLD, 50));
+        //getBackground().drawString("GUESS IT", backgroundImage.getWidth()/2, 70);
+        GreenfootImage game_Name = new GreenfootImage("game_title_header.png");
+        getBackground().drawImage(game_Name, backgroundImage.getWidth()/2 - 85, 10);
         
         //RUSHIN-----------------------------for name in top left
         getBackground().setFont(new Font("", Font.BOLD, 25));
@@ -67,16 +69,12 @@ public class GamePlayWorld extends World
         getBackground().drawLine(0,35,100,35);
         getBackground().drawLine(100,0,100,35);
         
-        //For GuessCounter
-        //getBackground().setFont(new Font("", Font.BOLD, 25));
-        ///getBackground().drawString("Guess"+this.getnumberguess(),getWidth()-200,30);
-        
         Message Score = new Message();
         Score.setImage(new GreenfootImage("Guess: " + numberOfGuess, 34, Color.RED, Color.BLACK));
         this.addObject(Score,getWidth()-100,30);
         
-        getBackground().setFont(new Font("", Font.BOLD, 25));
-        getBackground().drawString(this.playerName+",start guessing!", (backgroundImage.getWidth()/2), 100);
+       // getBackground().setFont(new Font("", Font.BOLD, 25));
+       //getBackground().drawString(this.playerName+",start guessing!", backgroundImage.getWidth()/2 - 50, 120);
         
         Greenfoot.setSpeed(50);
         LessThanButton LessThan=new LessThanButton();
@@ -94,10 +92,10 @@ public class GamePlayWorld extends World
         
         //Add guess and Query button
         QueryButton  queryButton = new QueryButton();
-        addObject(queryButton,getWidth()/2-290,(getHeight()-150));
+        addObject(queryButton,getWidth()/2-290,(getHeight()-200));
         
         GuessButton guessButton = new GuessButton();
-        addObject(guessButton,getWidth()/2-80,(getHeight()-150));
+        addObject(guessButton,getWidth()/2-80,(getHeight()-200));
         
         //Add lebel "Previous Query"
         Message queryResult = new Message();

@@ -22,6 +22,7 @@ public class GuessButton extends Actor
     {
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
+          Greenfoot.playSound("button_click.mp3");
           getWorldOfType(GamePlayWorld.class).operator="guess";
           GameEngine gameEngine = getWorldOfType(GamePlayWorld.class).gameEngine;
           gameEngine.enterendInput = getWorldOfType(GamePlayWorld.class).enteredNumber;
@@ -31,6 +32,7 @@ public class GuessButton extends Actor
             JOptionPane.showMessageDialog(null, "Please Enter a number to guess");
           else if(gameEngine.enterendInput==gameEngine.computerGuess){
             Message sampleMessage = new Message();
+            Greenfoot.playSound("congratulations.mp3");
             sampleMessage.setText("Cogratulations!!!!.Your Guess is Right");
             getWorld().addObject(sampleMessage, 300, 300);
           }

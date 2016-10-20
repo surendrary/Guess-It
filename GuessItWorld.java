@@ -32,9 +32,12 @@ public class GuessItWorld extends World
     {
         GreenfootImage backgroundImage = new GreenfootImage("home_page_Background.jpg");
         setBackground(backgroundImage); 
-        getBackground().setColor(Color.red);
-        getBackground().setFont(new Font("", Font.BOLD, 50));
-        getBackground().drawString("GUESS IT", backgroundImage.getWidth()/2, 70);
+        //getBackground().setColor(Color.red);
+        //getBackground().setFont(new Font("", Font.BOLD, 50));
+        //getBackground().drawString("GUESS IT", 
+        GreenfootImage game_Name = new GreenfootImage("game_title.png");
+        //addObject(game_Name,backgroundImage.getWidth()/2, 70);
+        getBackground().drawImage(game_Name, backgroundImage.getWidth()/2 - 85, 20);
         Greenfoot.setSpeed(50);
         
         Button playButton = new Button();

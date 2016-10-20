@@ -30,6 +30,7 @@ public class GreaterThanButton extends Actor
     {
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
+          Greenfoot.playSound("button_click.mp3");
           getWorldOfType(GamePlayWorld.class).operator="gt";
           LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
           box.updateImage("Greater Than");

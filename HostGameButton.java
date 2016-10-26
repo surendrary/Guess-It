@@ -8,11 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HostGameButton extends Actor
 {
+    String username ="";
     
-      public HostGameButton()
+      public HostGameButton(String username)
     {
         GreenfootImage image = new GreenfootImage("host game.png");
         setImage(image);
+        this.username = username;
     }
 
     /**
@@ -22,9 +24,7 @@ public class HostGameButton extends Actor
     public void act()
     {
       if(Greenfoot.mousePressed(this)){
-           //Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameTypeSelect.class).playerName));
-            //getWorldOfType(GameTypeSelect.class).gametype="single";
-            System.out.println(" host game initiated");
-            }
+           Greenfoot.setWorld(new GameLevelSelection(username));
+         }
         }
     }

@@ -8,8 +8,8 @@ import java.util.Map;
 /**
  * Write a description of class GamePlayWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Green Techies
+ * @version 1.0
  */
 public class GamePlayWorld extends World
 {

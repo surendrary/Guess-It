@@ -23,12 +23,11 @@ public class SinglePlayer extends Actor
     {
       if(Greenfoot.mousePressed(this)){
           Greenfoot.playSound("button_click.mp3");
-          Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameTypeSelect.class).playerName));
-          getWorldOfType(GameTypeSelect.class).gametype="single";
-          }
+          //Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameTypeSelect.class).playerName));
+          Greenfoot.setWorld(new GameLevelSelection(getWorldOfType(GameTypeSelect.class).playerName));
+        }
     }
-    }      
-
+}
 
 
 

@@ -1,10 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.lang.String;
+import javax.swing.JOptionPane;
+
 /**
- * Write a description of class JoinGameButton here.
+ * This class implens the beviour of 'Join Game' button.On clicking this button, user will be asked to enter a existing active game id in option pain.
+ * Afters words a validation check will be done, if user enters a valid game id, then user will be connected to that game instance
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * 
+ * @author Green Techies
+ * @version 1.0
  */
 public class JoinGameButton extends Actor
 {
@@ -21,10 +25,15 @@ public class JoinGameButton extends Actor
     public void act()
     {
       if(Greenfoot.mousePressed(this)){
-           //Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameTypeSelect.class).playerName));
-           //getWorldOfType(GameTypeSelect.class).gametype="single";
-           System.out.println(" join game initiated");
+           Greenfoot.playSound("button_click.mp3");
+           String userName = JOptionPane.showInputDialog("Enter Game ID to join");
+           if(userName.equals("")){
+               JOptionPane.showMessageDialog(null, "Game id is mandatory to join a multiplayer game");
             }
-        }
+        else{
+            // check validation of entered game id
+            }
+      }
+    }
     
 }

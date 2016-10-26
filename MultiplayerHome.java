@@ -10,17 +10,18 @@ import java.awt.Font;
  */
 public class MultiplayerHome extends World
 {
-
+    String userName = "";
     /**
      * Constructor for objects of class MultiplayerHome.
      * 
      */
-    public MultiplayerHome()
+    public MultiplayerHome(String userName)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(850, 650, 1);
         //this.playerName = playerName; 
         prepare();
+        this.userName = userName;
        // setupGameTypeSelect();
     }
     
@@ -41,7 +42,7 @@ public class MultiplayerHome extends World
         JoinGameButton joingame = new JoinGameButton();
         addObject(joingame,(backgroundImage.getWidth()/2)-100,backgroundImage.getHeight()+200);
     
-        HostGameButton hostgame = new HostGameButton();
+        HostGameButton hostgame = new HostGameButton(userName);
         addObject(hostgame,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+200);
     
     }

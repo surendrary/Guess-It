@@ -10,20 +10,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 //@rushin
 public class MultiPlayer extends Actor
 {
+    String userName = "";
        /**
      * Constructor for objectsof class LessThanButton
      */
-    public MultiPlayer()
+    public MultiPlayer(String userName)
     {
         GreenfootImage image = new GreenfootImage("multi player.png");
         setImage(image);
+        this.userName = userName;
     }
 
     public void act()
     {
      if(Greenfoot.mousePressed(this)){
             Greenfoot.playSound("button_click.mp3");
-            Greenfoot.setWorld(new MultiplayerHome());
+            Greenfoot.setWorld(new MultiplayerHome(userName));
       }     
     }      
 }

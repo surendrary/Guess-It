@@ -19,8 +19,6 @@ public class GameRules extends World
      */
     public GameRules()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        
         super(850, 650, 1); 
         setUp();
        
@@ -31,8 +29,6 @@ public class GameRules extends World
     
         GreenfootImage backgroundImage = new GreenfootImage("home_page_Background.jpg");
         setBackground(backgroundImage);
-        //GreenfootImage image = new GreenfootImage("GameOver.png");
-        //setImage(image);
         GreenfootImage game_Name = new GreenfootImage("game_title_header.png");
         getBackground().drawImage(game_Name, backgroundImage.getWidth()/2 - 20, 10);
         Greenfoot.setSpeed(50);
@@ -42,6 +38,10 @@ public class GameRules extends World
         getBackground().drawString("Use your logic to guess the secret number.", 50, 300);
         getBackground().drawString("If the numbers don't match, the computer will give you a hint!", 50, 400);
         getBackground().drawString("Let's see how many turns it takes for you to win.", 50, 500);
+        
+        //Add a back button to back to game's main page
+        BackButton backButton = new BackButton();
+        addObject(backButton,getWidth()/2-300,(getHeight()-565));
         
     }
 }

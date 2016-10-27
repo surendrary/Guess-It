@@ -20,7 +20,7 @@ public class Button extends Actor
         if(Greenfoot.mousePressed(this)){
             Greenfoot.playSound("button_click.mp3");
            String userName = JOptionPane.showInputDialog("Enter Name");
-           if(userName.equals("")){
+           if(userName==null || userName.equals("")){
                JOptionPane.showMessageDialog(null, "Username is mandatory to start game");
             }
         else{

@@ -43,8 +43,12 @@ public class GuessItWorld extends World
         Button playButton = new Button();
         addObject(playButton,(backgroundImage.getWidth()/2)+100,backgroundImage.getHeight()+200);
         
+        Rules rules = new Rules();
+        addObject(rules,getWidth()/2-300,(getHeight()-565));
+        
         About about = new About();
-        addObject(about,getWidth()/2-300,(getHeight()-565));
+        addObject(about,getWidth()/2-250,(getHeight()-565));
+   
     }
 
     /**

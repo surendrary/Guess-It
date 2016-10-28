@@ -6,15 +6,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class About extends Actor
+public class Rules extends Actor
 {
     /**
      * Act - do whatever the About wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public About()
+    public Rules()
     {
-        GreenfootImage image = new GreenfootImage("about.png");
+        GreenfootImage image = new GreenfootImage("rules.png");
         image.scale(40,40);
         setImage(image);
     }
@@ -25,7 +25,7 @@ public class About extends Actor
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
           Greenfoot.playSound("button_click.mp3");
-          Greenfoot.setWorld(new GameAbout());
+          Greenfoot.setWorld(new GameRules());
           
     }    
 }

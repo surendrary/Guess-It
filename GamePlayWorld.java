@@ -84,9 +84,12 @@ public class GamePlayWorld extends World
         Mod mod = new Mod();
         addObject(mod,400,200);
         
+       CloseButton closebutton = new CloseButton();
+        addObject(closebutton,getWidth()/2+410,(getHeight()-640));
+        
         label = new LabelBox();
         addObject(label, getWidth()/2-230, (getHeight()/2)+10);
-        
+        ////
         inputBox = new StringInputBox();
         addObject(inputBox, getWidth()/2-10, (getHeight()/2)-50);
         
@@ -97,10 +100,11 @@ public class GamePlayWorld extends World
         GuessButton guessButton = new GuessButton();
         addObject(guessButton,getWidth()/2-80,(getHeight()-200));
         
+        
         //Add lebel "Previous Query"
         Message queryResult = new Message();
         queryResult.setImage(new GreenfootImage("Previous Query Result", 25, Color.RED, Color.BLACK));
-        this.addObject(queryResult,getWidth()-200,getHeight()-465);
+       this.addObject(queryResult,getWidth()-200,getHeight()-465);
         
         //Add Text Area to track previous queries
         addObject(queryResultBox, getWidth()-200, getHeight()-300);

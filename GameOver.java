@@ -29,6 +29,8 @@ public class GameOver extends World
         setBackground(backgroundImage);
         //GreenfootImage image = new GreenfootImage("GameOver.png");
         //setImage(image);
+        CloseButton closebutton = new CloseButton();
+        addObject(closebutton,getWidth()/2+410,(getHeight()-640));
         
     }
 }

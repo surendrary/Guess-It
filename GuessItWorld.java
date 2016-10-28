@@ -48,7 +48,8 @@ public class GuessItWorld extends World
         
         About about = new About();
         addObject(about,getWidth()/2-250,(getHeight()-565));
-   
+        
+        
     }
 
     /**

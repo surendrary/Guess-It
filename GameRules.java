@@ -43,5 +43,8 @@ public class GameRules extends World
         BackButton backButton = new BackButton();
         addObject(backButton,getWidth()/2-300,(getHeight()-565));
         
+        CloseButton closebutton = new CloseButton();
+        addObject(closebutton,getWidth()/2+410,(getHeight()-640));
+        
     }
 }

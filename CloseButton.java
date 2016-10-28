@@ -14,7 +14,7 @@ public class CloseButton extends Actor
      */
     public CloseButton(){
         GreenfootImage image = new GreenfootImage("close.png");
-        image.scale(60,60);
+        image.scale(30,30);
         setImage(image);
     }
     

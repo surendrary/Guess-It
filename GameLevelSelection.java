@@ -42,9 +42,13 @@ public class GameLevelSelection extends World
         getBackground().drawLine(100,0,100,35);
         
         Greenfoot.setSpeed(50);
+        CloseButton closebutton = new CloseButton();
+        addObject(closebutton,getWidth()/2+410,(getHeight()-640));
+        
         EasyGameButton easygame=new EasyGameButton();
         addObject(easygame,backgroundImage.getWidth()/2+100,250);
         HardGameButton hardhame=new HardGameButton();
         addObject(hardhame,backgroundImage.getWidth()/2 +100,400);
+                
     }
 }

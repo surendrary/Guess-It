@@ -44,6 +44,9 @@ public class MultiplayerHome extends World
     
         HostGameButton hostgame = new HostGameButton(userName);
         addObject(hostgame,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+200);
+        
+        CloseButton closebutton = new CloseButton();
+        addObject(closebutton,getWidth()/2+410,(getHeight()-640));
     
     }
 }

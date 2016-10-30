@@ -36,14 +36,14 @@ public class GameTitle extends Actor
        {
            setLocation(getX()+dy,getY()+ dy);
            dy=dy+g; 
-                  } 
-             
+       } 
+                   
         
     }  
     
     public boolean stopfall()
     {
-        if(getY()>180)    
+        if(getY()>150)     
         {
          return false;
         }

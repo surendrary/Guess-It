@@ -5,10 +5,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
- 
+
 public class Button extends Actor
 {
     
+    int dy=0;
+    float g=1.0f;  
     public Button()
     {
         GreenfootImage image = new GreenfootImage("play_button.png");
@@ -27,6 +29,11 @@ public class Button extends Actor
             Greenfoot.setWorld(new GameTypeSelect(userName));
             }
         }
+        if(stopfall()==true)
+        {
+           setLocation(getX()+dy,getY());
+           dy=dy+(int)g; 
+        }  
     }
     
     private Connection getConnection(){
@@ -42,7 +49,7 @@ public class Button extends Actor
         try{
         String sql = "Insert into guessdb.user(user_name) values('"+username+ "')";
         PreparedStatement st = null; 
-        st = connection.prepareStatement(sql);
+        st = connection.prepareStatement(sql); 
         st.execute(sql);
         //ResultSet rs = st.executeQuery(sql);
           //  while (rs.next()){
@@ -50,7 +57,18 @@ public class Button extends Actor
               //}
         }
         catch(Exception e){
-            System.out.println(e);
+            System.out.println(e); 
+        }
+    }
+    public boolean stopfall()
+    {
+        if(getX()>400)    
+        {
+         return false;
+        }
+        else
+        {
+         return true;
         }
     }
 }

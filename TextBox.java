@@ -1,7 +1,10 @@
 import greenfoot.*;
 import java.awt.Color;
 import javax.swing.JOptionPane;
- 
+ /**
+  * This is the textbox class which is inherited by all the text boxes that are
+  * a part of game. 
+  */
 public class TextBox extends Actor
 {
     static int NAME_INPUT_LENGTH = 20;

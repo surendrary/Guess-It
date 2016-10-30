@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=StringInputBox
+comment0.text=\r\n\ This\ text\ box\ is\ for\ the\ feild\ where\ user\ enters\ the\ number\ for\ guessing.\r\n
 comment1.params=
 comment1.target=StringInputBox()
 comment2.params=
@@ -8,5 +9,5 @@ comment3.params=
 comment3.target=void\ act()
 comment4.params=
 comment4.target=void\ clearText()
-comment4.text=\n@rushin\ \n\ Function\ to\ clear\ text\ once\ the\ search\ button\ has\ been\ clicked\n
+comment4.text=\r\n@rushin\ \r\n\ Function\ to\ clear\ text\ once\ the\ search\ button\ has\ been\ clicked\r\n
 numComments=5

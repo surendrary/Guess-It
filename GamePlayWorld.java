@@ -91,7 +91,7 @@ public class GamePlayWorld extends World
         addObject(label, getWidth()/2-230, (getHeight()/2)+10);
         ////
         inputBox = new StringInputBox();
-        addObject(inputBox, getWidth()/2-10, (getHeight()/2)-50);
+        addObject(inputBox, getWidth()/2-50, (getHeight()/2)+ 10);
         
         //Add guess and Query button
         QueryButton  queryButton = new QueryButton();

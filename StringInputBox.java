@@ -2,6 +2,9 @@ import greenfoot.*;
 import java.awt.Color;
 import javax.swing.JOptionPane;
  
+/**
+ * This text box is for the feild where user enters the number for guessing.
+ */
 public class StringInputBox extends TextBox
 {
     static final int NAME_INPUT_LENGTH = 3;

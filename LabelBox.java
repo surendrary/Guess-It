@@ -2,6 +2,9 @@ import greenfoot.*;
 import java.awt.Color;
 import javax.swing.JOptionPane;
  
+/**
+ * THis is the label box where user is notified with the criterias he/she selects as a move in the game.
+ */
 public class LabelBox extends TextBox
 {
     static final int NAME_INPUT_LENGTH = 40;

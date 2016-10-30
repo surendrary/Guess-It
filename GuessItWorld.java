@@ -35,9 +35,9 @@ public class GuessItWorld extends World
         //getBackground().setColor(Color.red);
         //getBackground().setFont(new Font("", Font.BOLD, 50));
         //getBackground().drawString("GUESS IT", 
-        GreenfootImage game_Name = new GreenfootImage("game_title.png");
+        //GreenfootImage game_Name = new GreenfootImage("game_title.png");
         //addObject(game_Name,backgroundImage.getWidth()/2, 70);
-        getBackground().drawImage(game_Name, backgroundImage.getWidth()/2 - 85, 20);
+        // getBackground().drawImage(game_Name, backgroundImage.getWidth()/2 - 85, 20);
         Greenfoot.setSpeed(50);
         
         Button playButton = new Button();
@@ -50,6 +50,8 @@ public class GuessItWorld extends World
         addObject(about,getWidth()/2-250,(getHeight()-565));
         
         
+        
+        
     }
 
     /**
@@ -60,9 +62,12 @@ public class GuessItWorld extends World
     {
         GameDiagram gameDiagram = new GameDiagram();
         addObject(gameDiagram,410,319);
+        GameTitle gametitle=new GameTitle();
+        addObject(gametitle,307 ,0); 
     }
 
 public void act() 
     {
-}
+        
+    }
 }

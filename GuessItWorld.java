@@ -49,6 +49,11 @@ public class GuessItWorld extends World
         About about = new About();
         addObject(about,getWidth()/2-250,(getHeight()-565));
         
+       
+        
+        ViewScoresButton vs=new ViewScoresButton();
+        addObject(vs,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+200);
+        
         
         
         

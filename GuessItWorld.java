@@ -19,7 +19,7 @@ public class GuessItWorld extends World
      */
     public GuessItWorld()
     {    
-        super(850, 650, 1); 
+        super(850 , 650, 1); 
         setUpGame();
         prepare();
     }
@@ -43,11 +43,11 @@ public class GuessItWorld extends World
         //Button playButton = new Button();
         //addObject(playButton,(backgroundImage.getWidth()/2)+100,backgroundImage.getHeight()+200);
         
-        Rules rules = new Rules();
-        addObject(rules,getWidth()/2-300,(getHeight()-565));
+        //Rules rules = new Rules();
+        //addObject(rules,getWidth()/2-300,(getHeight()-565));
         
-        About about = new About();
-        addObject(about,getWidth()/2-250,(getHeight()-565));
+        //About about = new About();
+        //addObject(about,getWidth()/2-250,(getHeight()-565));
         
        
         
@@ -67,8 +67,8 @@ public class GuessItWorld extends World
      */
     private void prepare()
     {
-        GameDiagram gameDiagram = new GameDiagram();
-        addObject(gameDiagram,410,319);
+        //GameDiagram gameDiagram = new GameDiagram();
+        // addObject(gameDiagram,410,319);  
         //GameTitle gametitle=new GameTitle();
         //addObject(gametitle,307 ,0); 
     }
@@ -81,6 +81,21 @@ public class GuessItWorld extends World
         //Greenfoot.delay(10);
         Button playButton = new Button();
         addObject(playButton,0 ,550); 
+        
+        GameDiagram gameDiagram = new GameDiagram();
+        addObject(gameDiagram,410,0); 
+        
+        Rules rules = new Rules();
+        addObject(rules,getWidth()/2-300,(getHeight()-565));
+        
+        About about = new About();
+        addObject(about,getWidth()/2-250,(getHeight()-565));
+        
+       
+        //ViewScoresButton vs=new ViewScoresButton();
+        //addObject(vs,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+200); 
+        
+       
         
     }
     

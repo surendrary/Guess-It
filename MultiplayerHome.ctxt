@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=MultiplayerHome
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MultiplayerHome\ here.\r\n\ \r\n\ @author\ Rushin\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ MultiplayerHome\ here.\n\ \n\ @author\ Rushin\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=userName
 comment1.target=MultiplayerHome(java.lang.String)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MultiplayerHome.\r\n\ \r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ MultiplayerHome.\n\ \n
 comment2.params=
 comment2.target=void\ prepare()
 numComments=3

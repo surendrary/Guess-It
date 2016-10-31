@@ -10,6 +10,8 @@ public class GameDiagram  extends Actor
 {
     // instance variables - replace the example below with your own
     private int x;
+    int dy=2;
+    int g=1;
 
     /**
      * Constructor for objects of class Diag1
@@ -30,5 +32,29 @@ public class GameDiagram  extends Actor
     {
         // put your code here
         return x + y;
+    }
+    
+    public void act() 
+    {
+       
+       if(stopfall()==true)
+       {
+           setLocation(getX(),getY()+ dy);
+           dy=dy+g;  
+       } 
+                   
+        
+    }  
+    
+    public boolean stopfall()
+    {
+        if(getY()>319)     
+        {
+         return false;
+        }
+        else
+        {
+         return true;
+        }
     }
 }

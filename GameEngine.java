@@ -15,15 +15,22 @@ public class GameEngine extends Actor
     public static int enterendInput = 0;
     public static String chosedOperation = null;
     public String playerName = "";
+    public String gameLevel="";
 
     /**
      * Constructor for objects of class GameEngine
      */
-    public GameEngine(String playerName)
+    public GameEngine(String playerName, String gameLevel)
     {
       this.playerName = playerName;
+      this.gameLevel =gameLevel;
       Random random = new Random();
-      computerGuess = random.nextInt(100)+2;
+      if(gameLevel.equals("hard")){
+      computerGuess = random.nextInt(1000)+2;
+      }
+      else{
+        computerGuess = random.nextInt(100)+2;
+      }
       getWorldOfType(GamePlayWorld.class).computerGuess = computerGuess;
     }
 

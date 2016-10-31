@@ -15,6 +15,7 @@ public class GamePlayWorld extends World
 {
 
     String playerName = "";
+    String gameLevel = "";
     public static String operator = ""; // select operators i.e. >,<,/
     public static int enteredNumber = 0;
     public static int computerGuess;
@@ -29,10 +30,11 @@ public class GamePlayWorld extends World
      * Constructor for objects of class GamePlayWorld.
      * 
      */
-    public GamePlayWorld(String playerName)
+    public GamePlayWorld(String playerName,String gameLevel)
     {    
        super(850, 650, 1);
        this.playerName = playerName; 
+       this.gameLevel = gameLevel;
        setUpGame();
     }
     
@@ -109,7 +111,7 @@ public class GamePlayWorld extends World
         //Add Text Area to track previous queries
         addObject(queryResultBox, getWidth()-200, getHeight()-300);
         
-        gameEngine = new GameEngine(this.playerName);
+        gameEngine = new GameEngine(this.playerName,this.gameLevel);
         
         //update number to zero on load
         this.numberOfGuess = 0;

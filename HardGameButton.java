@@ -16,7 +16,7 @@ public class HardGameButton extends Actor
     {
         if(Greenfoot.mousePressed(this)){
           Greenfoot.playSound("button_click.mp3");
-          Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName));
+          Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard"));
           }
     }    
 }

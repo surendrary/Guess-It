@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=GameLevelSelection
-comment0.text=\n\ This\ will\ be\ shown\ for\ choosing\ game\ level\ in\ both\ multi\ player\ and\ singke\ player.\n\ In\ Multi\ plyaer\ ,\ it\ will\ appread\ in\ this\ sequence\ Multiplayer->\ Host\ Game->\ Select\ Level\n\ In\ Single\ Player,\ it\ will\ appread\ in\ this\ sequence\ SinglePlayer\ ->\ Select\ Level\n\ \n\ @author\ Green\ Techies\n\ @version\ 1.0\n
+comment0.text=\r\n\ This\ will\ be\ shown\ for\ choosing\ game\ level\ in\ both\ multi\ player\ and\ singke\ player.\r\n\ In\ Multi\ plyaer\ ,\ it\ will\ appread\ in\ this\ sequence\ Multiplayer->\ Host\ Game->\ Select\ Level\r\n\ In\ Single\ Player,\ it\ will\ appread\ in\ this\ sequence\ SinglePlayer\ ->\ Select\ Level\r\n\ \r\n\ @author\ Green\ Techies\r\n\ @version\ 1.0\r\n
 comment1.params=playerName
 comment1.target=GameLevelSelection(java.lang.String)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ GameLevelSelection.\n\ \n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameLevelSelection.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ setUpGameLevelSelection()
-comment2.text=\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\n\ objects\ and\ add\ them\ to\ the\ world.\n
+comment2.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\r\n\ objects\ and\ add\ them\ to\ the\ world.\r\n
 numComments=3

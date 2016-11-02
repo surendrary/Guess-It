@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import javax.swing.JOptionPane;
 /**
  * Write a description of class BackButton here.
  * 
@@ -24,8 +24,18 @@ public class CloseButton extends Actor
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
           Greenfoot.playSound("button_click.mp3");
-          Greenfoot.setWorld(new GuessItWorld());
-          
+          String message= "Do you really want to quit?";
+          String title= "CONFIRM TO QUIT !!!";
+          //Displaying confirmation dialog box. @rushin
+          int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
+          if (reply == JOptionPane.YES_OPTION)
+          {
+              System.exit(0); 
+            }
+          else
+          {
+            
+            }
     }   
     }
 }

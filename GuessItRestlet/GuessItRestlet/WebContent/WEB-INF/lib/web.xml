@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>EmployeeServiceServlet</servlet-name>
+		<servlet-class>edu.sjsu.se486.EmployeeServiceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmployeeServiceServlet</servlet-name>
+		<url-pattern>/cmpe281_Sucheta486/rest/employee/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ProjectServiceServlet</servlet-name>
+		<servlet-class>edu.sjsu.se486.ProjectServiceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProjectServiceServlet</servlet-name>
+		<url-pattern>/cmpe281_Sucheta486/rest/project/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

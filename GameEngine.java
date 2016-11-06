@@ -1,6 +1,9 @@
 import greenfoot.*;
 import java.util.Random;
 import javax.swing.JOptionPane;
+import org.restlet.resource.ClientResource;
+import org.restlet.representation.Representation ;
+import org.restlet.ext.json.JsonRepresentation;
 
 /**
  * This is the central class for implenting the Game
@@ -16,6 +19,7 @@ public class GameEngine extends Actor
     public static String chosedOperation = null;
     public String playerName = "";
     public String gameLevel="";
+    private final String service_url = "http://localhost:8080/restlet/guessit";
 
     /**
      * Constructor for objects of class GameEngine
@@ -25,12 +29,21 @@ public class GameEngine extends Actor
       this.playerName = playerName;
       this.gameLevel =gameLevel;
       Random random = new Random();
-      if(gameLevel.equals("hard")){
-      computerGuess = random.nextInt(1000)+2;
-      }
-      else{
-        computerGuess = random.nextInt(100)+2;
-      }
+      //if(gameLevel.equals("hard")){
+      //computerGuess = random.nextInt(1000)+2;
+      //}
+      //else{
+        //computerGuess = random.nextInt(100)+2;
+      //}
+      try {
+            ClientResource gameEngineResource = new ClientResource(service_url); 
+            Representation result = gameEngineResource.get(); 
+            JsonRepresentation newResult = new JsonRepresentation(result);
+            computerGuess = (int)newResult.getJsonObject().get("guessedNumber");
+            System.out.println("Guess is ::"+ computerGuess);
+            } catch ( Exception e ) {
+                 //
+            } 
       getWorldOfType(GamePlayWorld.class).computerGuess = computerGuess;
     }
 

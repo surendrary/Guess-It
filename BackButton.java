@@ -26,9 +26,17 @@ public class BackButton extends Actor
           Greenfoot.playSound("button_click.mp3");
           World world = getWorld();
           if(world instanceof GameRules)
-                Greenfoot.setWorld(new GuessItWorld());
+          {
+                GuessItWorld w=new GuessItWorld();
+                w.started();
+                Greenfoot.setWorld(w);
+           }
           else if(world instanceof GameAbout)
-                Greenfoot.setWorld(new GuessItWorld());
+          {
+                GuessItWorld w=new GuessItWorld();
+                w.started();
+                Greenfoot.setWorld(w);
+           }
           else if(world instanceof GamePlayWorld)
             {
                 String name = getWorldOfType(GamePlayWorld.class).playerName;
@@ -53,11 +61,17 @@ public class BackButton extends Actor
             {
                 String name = getWorldOfType(GameTypeSelect.class).playerName;
                 System.out.print(name);
-                Greenfoot.setWorld(new GuessItWorld());
+                GuessItWorld w=new GuessItWorld();
+                w.started();
+                Greenfoot.setWorld(w);
             }
           
           else if(world instanceof GameAbout)
-          Greenfoot.setWorld(new GuessItWorld());
+          {
+          GuessItWorld w=new GuessItWorld();
+          w.started();
+          Greenfoot.setWorld(w);
+          }
                           
               
     } 

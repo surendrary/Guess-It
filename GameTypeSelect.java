@@ -48,6 +48,11 @@ public class GameTypeSelect extends World
         
         CloseButton closebutton = new CloseButton();
         addObject(closebutton,getWidth()/2+410,(getHeight()-640));
+        
+        //rushin
+        BackButton bb = new BackButton();
+        addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+275);
+    
        
     }
 }

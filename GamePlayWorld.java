@@ -115,6 +115,12 @@ public class GamePlayWorld extends World
         
         //update number to zero on load
         this.numberOfGuess = 0;
+        
+        
+        //rushin
+        BackButton bb = new BackButton();
+        addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+275);
+        
     }
     
     public void UpdateGuess(){ 

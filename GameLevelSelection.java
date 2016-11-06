@@ -49,6 +49,11 @@ public class GameLevelSelection extends World
         addObject(easygame,backgroundImage.getWidth()/2+100,250);
         HardGameButton hardhame=new HardGameButton();
         addObject(hardhame,backgroundImage.getWidth()/2 +100,400);
+        
+        //rushin
+        BackButton bb = new BackButton();
+        addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+275);
+        
                 
     }
 }

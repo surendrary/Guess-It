@@ -24,6 +24,9 @@ public class GameAbout extends World
        
     }
     
+     /**
+     * Prepares the world.
+     */
     private void setUp()
     {
     

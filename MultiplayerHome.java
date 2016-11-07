@@ -25,6 +25,9 @@ public class MultiplayerHome extends World
        // setupGameTypeSelect();
     }
     
+    /**
+     * Prepares the world.
+     */
     private void prepare()
     {
         GreenfootImage backgroundImage = new GreenfootImage("home_page_Background.jpg");

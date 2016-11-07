@@ -6,4 +6,5 @@ comment1.target=GameAbout()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameRules.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ setUp()
+comment2.text=\r\n\ Prepares\ the\ world.\r\n
 numComments=3

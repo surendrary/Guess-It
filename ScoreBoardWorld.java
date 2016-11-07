@@ -3,7 +3,7 @@ import java.awt.Color;
 import javax.swing.*;
 import java.awt.Font;
 /**
- * Write a description of class GameTypeSelect here.
+ * ScoreBoardWorld is the greenfoot world where the final scoreboard is displayed.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -23,6 +23,9 @@ public class ScoreBoardWorld extends World
      
     }
     
+    /**
+     * Prepares the world.
+     */
      private void prepare()
     {
         GreenfootImage backgroundImage = new GreenfootImage("home_page_Background.jpg");

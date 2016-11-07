@@ -3,7 +3,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class QueryResultBox here.
+ * QueryResultBox is the texbox where the result of guesses made by users are displayed.
  * 
  * @author Green Techies
  * @version 1.0

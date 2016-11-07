@@ -10,10 +10,10 @@ import java.sql.*;
 //import com.mysql.jdbc.*; 
 
 /**
- * Write a description of class DBConnection here.
+ * DBConnection class is to create a connection with database. all other classes need to seek connection from this 
+ * class to implement database functionalities.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Green Techies 
  */
 public class DBConnection  
 {

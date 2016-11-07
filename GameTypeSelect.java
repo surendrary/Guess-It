@@ -5,7 +5,7 @@ import java.awt.Font;
 /**
  * Write a description of class GameTypeSelect here.
  * 
- * @author (your name) 
+ * @Green Techies
  * @version (a version number or a date)
  */
 

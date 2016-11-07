@@ -7,7 +7,7 @@ import java.awt.Font;
 /**
  * Write a description of class GameRules here.
  * 
- * @author (your name) 
+ * @Green Techies 
  * @version (a version number or a date)
  */
 public class GameAbout extends World

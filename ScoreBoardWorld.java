@@ -5,7 +5,7 @@ import java.awt.Font;
 /**
  * ScoreBoardWorld is the greenfoot world where the final scoreboard is displayed.
  * 
- * @author (your name) 
+ * @Green Techies
  * @version (a version number or a date)
  */
 

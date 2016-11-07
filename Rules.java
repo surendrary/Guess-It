@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class About here.
+ * This Page will display game rules.
  * 
  * @author (your name) 
  * @version (a version number or a date)

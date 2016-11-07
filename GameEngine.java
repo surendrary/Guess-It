@@ -1,10 +1,10 @@
 import greenfoot.*;
 import java.util.Random;
 import javax.swing.JOptionPane;
-import org.restlet.resource.ClientResource;
+/**import org.restlet.resource.ClientResource;
 import org.restlet.representation.Representation ;
 import org.restlet.ext.json.JsonRepresentation;
-
+*/
 /**
  * This is the central class for implenting the Game
  * 
@@ -36,10 +36,10 @@ public class GameEngine extends Actor
         //computerGuess = random.nextInt(100)+2;
       //}
       try {
-            ClientResource gameEngineResource = new ClientResource(service_url); 
-            Representation result = gameEngineResource.get(); 
-            JsonRepresentation newResult = new JsonRepresentation(result);
-            computerGuess = (int)newResult.getJsonObject().get("guessedNumber");
+            //ClientResource gameEngineResource = new ClientResource(service_url); 
+            //Representation result = gameEngineResource.get(); 
+            //JsonRepresentation newResult = new JsonRepresentation(result);
+            //computerGuess = (int)newResult.getJsonObject().get("guessedNumber");
             System.out.println("Guess is ::"+ computerGuess);
             } catch ( Exception e ) {
                  //

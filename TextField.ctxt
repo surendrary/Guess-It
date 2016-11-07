@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=TextField
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ TextField\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ TextField\ here.\r\n\ \r\n\ @Green\ Techies\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=TextField()
 comment1.text=\r\n\ Creates\ a\ new\ TextField\ of\ a\ default\ size\ of\ 250\ x\ 50\ with\ black\ letters\ on\ white\ background.\r\n

@@ -1,13 +1,14 @@
-import java.util.Random;
+/**import java.util.Random;
 
 import org.json.JSONObject;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
-
+*/
 /**
  * Resource which has only one representation.
  */
+/**
 public class GameEngineResource extends ServerResource {
 
 	@Get
@@ -19,4 +20,4 @@ public class GameEngineResource extends ServerResource {
 		return new JsonRepresentation(guess);
 	}
 
-}
+}*/

@@ -8,6 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HardGameButton extends Actor
 {
+    String playerName = "";
+    String level = "";
+    boolean isMultiplayer;
+    boolean isHost;
+    String gameName= "";
+    private static String service_url = "http://localhost:8080/restlet/guessit/database";
+    
     /**
      * Act - do whatever the HardGameButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

@@ -2,6 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 import javax.swing.*;
 import java.awt.Font;
+import javax.swing.JOptionPane;
 /**
  * Write a description of class MultiplayerHome here.
  * 
@@ -22,6 +23,7 @@ public class MultiplayerHome extends World
         //this.playerName = playerName; 
         prepare();
         this.userName = userName;
+        System.out.println(" Multiplayer Home " + this.userName);
        // setupGameTypeSelect();
     }
     
@@ -45,7 +47,8 @@ public class MultiplayerHome extends World
         JoinGameButton joingame = new JoinGameButton();
         addObject(joingame,(backgroundImage.getWidth()/2)-100,backgroundImage.getHeight()+200);
     
-        HostGameButton hostgame = new HostGameButton(userName);
+        System.out.println(this.userName+" Multiplayer Home");
+        HostGameButton hostgame = new HostGameButton(this.userName,true,true);
         addObject(hostgame,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+200);
         
         CloseButton closebutton = new CloseButton();

@@ -13,15 +13,22 @@ public class GameLevelSelection extends World
 {
     String playerName = "";
     String level = "";
+    boolean isMultiplayer;
+    boolean isHost;
+    String gameName ="";
  
     /**
      * Constructor for objects of class GameLevelSelection.
      * 
      */
-    public GameLevelSelection(String playerName)
+    public GameLevelSelection(String playerName,boolean isMultiplayer, boolean isHost,String gameName)
     {    
        super(850, 650, 1);
        this.playerName = playerName; 
+        System.out.println(this.playerName+" Game Level selection");
+       this.isMultiplayer = isMultiplayer;
+       this.isHost = isHost;
+       this.gameName = gameName;
        setUpGameLevelSelection(); 
     }
     
@@ -45,7 +52,7 @@ public class GameLevelSelection extends World
         CloseButton closebutton = new CloseButton();
         addObject(closebutton,getWidth()/2+410,(getHeight()-640));
         
-        EasyGameButton easygame=new EasyGameButton();
+        EasyGameButton easygame=new EasyGameButton(this.playerName,this.gameName,this.isMultiplayer,this.isHost);
         addObject(easygame,backgroundImage.getWidth()/2+100,250);
         HardGameButton hardhame=new HardGameButton();
         addObject(hardhame,backgroundImage.getWidth()/2 +100,400);

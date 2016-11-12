@@ -1,0 +1,11 @@
+For easy access of mongo, we dont need to created a new mongo database and Server in our local system.
+
+It could be taken care by online mongo lab (i.e. https://mlab.com/)
+To see existing game related database, we can log to this site with username & password (sucheta).
+
+After that we can find a database name 'guessit', which comprises of all the game related database.
+
+Now to use this db in our java code we can simply use the following url 
+"mongodb://guessitadmin:techadmin@ds151137.mlab.com:51137/guessit";
+
+This will help us to reduce mongo db or anyother server handling overheads in AWS cloud also.

@@ -43,7 +43,7 @@ public class GameTypeSelect extends World
         SinglePlayer singleplayerbutton = new SinglePlayer();
         addObject(singleplayerbutton,(backgroundImage.getWidth()/2)-100,backgroundImage.getHeight()+200);
     
-        MultiPlayer multiplayerbutton = new MultiPlayer(playerName);
+        MultiPlayer multiplayerbutton = new MultiPlayer(this.playerName);
         addObject(multiplayerbutton,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+200);
         
         CloseButton closebutton = new CloseButton();

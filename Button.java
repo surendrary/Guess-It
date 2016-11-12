@@ -26,6 +26,7 @@ public class Button extends Actor
                JOptionPane.showMessageDialog(null, "Username is mandatory to start game");
             }
         else{
+             System.out.println(userName+" Game Level selection");
             Greenfoot.setWorld(new GameTypeSelect(userName));
             }
         }

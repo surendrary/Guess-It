@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import javax.swing.JOptionPane;
 
 /**
  * Write a description of class HostGameButton here.
@@ -9,12 +10,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class HostGameButton extends Actor
 {
     String username ="";
+    String gameName ="";
     
-      public HostGameButton(String username)
+      public HostGameButton(String playerName,boolean isMultiplayer, boolean isHost)
     {
         GreenfootImage image = new GreenfootImage("host game.png");
         setImage(image);
         this.username = username;
+        System.out.println(" Host button " + this.username);
+        this.gameName = gameName;
     }
 
     /**
@@ -24,7 +28,11 @@ public class HostGameButton extends Actor
     public void act()
     {
       if(Greenfoot.mousePressed(this)){
-           Greenfoot.setWorld(new GameLevelSelection(username));
-         }
-        }
+          String gameName = JOptionPane.showInputDialog("Enter Game ID to host");
+           if(gameName.equals("")){
+               JOptionPane.showMessageDialog(null, "Game id is mandatory to host a multiplayer game");
+            }
+           Greenfoot.setWorld(new GameLevelSelection(username,true,true,gameName));
+      }
+    }
     }

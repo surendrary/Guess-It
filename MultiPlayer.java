@@ -19,13 +19,14 @@ public class MultiPlayer extends Actor
         GreenfootImage image = new GreenfootImage("multi player.png");
         setImage(image);
         this.userName = userName;
+        System.out.println(" Multi Plarer " + this.userName);
     }
 
     public void act()
     {
      if(Greenfoot.mousePressed(this)){
             Greenfoot.playSound("button_click.mp3");
-            Greenfoot.setWorld(new MultiplayerHome(userName));
+            Greenfoot.setWorld(new MultiplayerHome(this.userName));
       }     
     }      
 }

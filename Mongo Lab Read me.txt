@@ -1,7 +1,7 @@
 For easy access of mongo, we dont need to created a new mongo database and Server in our local system.
 
 It could be taken care by online mongo lab (i.e. https://mlab.com/)
-To see existing game related database, we can log to this site with username & password (sucheta).
+To see existing game related database, we can log to this site with username & password (sucheta, sucheta123).
 
 After that we can find a database name 'guessit', which comprises of all the game related database.
 

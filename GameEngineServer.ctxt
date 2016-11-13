@@ -2,7 +2,7 @@
 comment0.target=GameEngineServer
 comment1.params=
 comment1.target=org.restlet.Restlet\ createInboundRoot()
-comment1.text=\r\n\ Creates\ a\ root\ Restlet\ that\ will\ receive\ all\ incoming\ calls.\r\n
+comment1.text=\n\ Creates\ a\ root\ Restlet\ that\ will\ receive\ all\ incoming\ calls.\n
 comment2.params=args
 comment2.target=void\ main(java.lang.String[])
 numComments=3

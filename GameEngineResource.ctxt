@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=GameEngineResource
-comment0.text=\r\n\ Resource\ which\ has\ only\ one\ representation.\r\n
+comment0.text=\n\ Resource\ which\ has\ only\ one\ representation.\n
 comment1.params=
 comment1.target=org.restlet.ext.json.JsonRepresentation\ represent()
 numComments=2

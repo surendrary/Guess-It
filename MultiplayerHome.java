@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 public class MultiplayerHome extends World
 {
     String userName = "";
+    public String test="";
     /**
      * Constructor for objects of class MultiplayerHome.
      * 
@@ -21,9 +22,10 @@ public class MultiplayerHome extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(850, 650, 1);
         //this.playerName = playerName; 
-        prepare();
+        
         this.userName = userName;
         System.out.println(" Multiplayer Home " + this.userName);
+        prepare();
        // setupGameTypeSelect();
     }
     
@@ -43,8 +45,9 @@ public class MultiplayerHome extends World
         getBackground().drawString("Please select one the options to initialize your game", 50, 170);
         
         Greenfoot.setSpeed(50);
-        
-        JoinGameButton joingame = new JoinGameButton();
+        System.out.println("Join Button1surendra"+this.test+"Join Button1surendra");
+        JoinGameButton joingame = new JoinGameButton(this.userName);
+        System.out.println(this.userName);
         addObject(joingame,(backgroundImage.getWidth()/2)-100,backgroundImage.getHeight()+200);
     
         System.out.println(this.userName+" Multiplayer Home");

@@ -46,7 +46,7 @@ public class JoinGameButton extends Actor
         Greenfoot.playSound("button_click.mp3");
         ClientResource guessDatabaseResource = new ClientResource(service_url);
         Form form = new Form(); 
-        form.add("Playername",this.playerName);
+        form.add("playername",this.playerName);
             form.add("gameId",userName);
 		Representation result = guessDatabaseResource.put(form);
 		System.out.println("Helllo");

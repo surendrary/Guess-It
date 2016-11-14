@@ -25,7 +25,7 @@ public class GameOver extends World
     private void setUp()
     {
     
-        GreenfootImage backgroundImage = new GreenfootImage("gameover4.jpg");
+        GreenfootImage backgroundImage = new GreenfootImage("GameOver4.jpg");
         setBackground(backgroundImage);
         //GreenfootImage image = new GreenfootImage("GameOver.png");
         //setImage(image);

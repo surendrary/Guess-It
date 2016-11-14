@@ -12,4 +12,6 @@ comment3.target=void\ setUpGame()
 comment3.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\r\n\ objects\ and\ add\ them\ to\ the\ world.\r\n
 comment4.params=
 comment4.target=void\ UpdateGuess()
-numComments=5
+comment5.params=
+comment5.target=void\ act()
+numComments=6

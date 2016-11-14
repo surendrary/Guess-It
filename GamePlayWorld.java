@@ -13,6 +13,7 @@ import java.util.Map;
  */
 public class GamePlayWorld extends World
 {
+    public long startTime = System.currentTimeMillis();
 
     String playerName = "";
     String gameLevel = "";
@@ -57,6 +58,9 @@ public class GamePlayWorld extends World
      */
     private void setUpGame()
     {
+        // starting time recorded
+        long startTime = System.currentTimeMillis();
+
         GreenfootImage backgroundImage = new GreenfootImage("home_page_Background.jpg");
         setBackground(backgroundImage); 
         //getBackground().setColor(Color.red);
@@ -121,6 +125,8 @@ public class GamePlayWorld extends World
         BackButton bb = new BackButton();
         addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+275);
         
+      
+        
     }
     
     public void UpdateGuess(){ 
@@ -128,6 +134,20 @@ public class GamePlayWorld extends World
         Message Score = new Message();
         Score.setImage(new GreenfootImage("Guess : " + numberOfGuess, 34, Color.RED, Color.BLACK));
         this.addObject(Score,getWidth()-100,30);
+    }
+   
+    public void act() 
+    {
+        
+        int msSinceLast = (int)(System.currentTimeMillis()- startTime);
+        // durationMillis is in milliseconds, so you
+        // can convert to seconds/minutes whatever:
+        int durationSecs = msSinceLast / 1000;
+
+      //long msSinceLast = System.currentTimeMillis()-startTime;
+      Message time= new Message();
+      time.setImage(new GreenfootImage(durationSecs+" seconds", 35,Color.RED, Color.BLACK));
+      this.addObject(time,getWidth()-120,60);
     }
 }
     

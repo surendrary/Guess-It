@@ -11,6 +11,7 @@ public class Button extends Actor
     
     int dy=0;
     float g=1.0f;  
+    private ConcreteCommand command;
     public Button()
     {
         GreenfootImage image = new GreenfootImage("play_button.png");
@@ -20,15 +21,24 @@ public class Button extends Actor
     public void act() 
     {
         if(Greenfoot.mousePressed(this)){
-            Greenfoot.playSound("button_click.mp3");
-           String userName = JOptionPane.showInputDialog("Enter Name");
-           if(userName==null || userName.equals("")){
-               JOptionPane.showMessageDialog(null, "Username is mandatory to start game");
-            }
-        else{
-             System.out.println(userName+" Game Level selection");
-            Greenfoot.setWorld(new GameTypeSelect(userName));
-            }
+            command = new ConcreteCommand();
+            command.setReceiver(new MainButtonReceiver());
+            
+            InvokerImpl in = new InvokerImpl();
+            in.setCommand(command);
+            
+            in.invoke();           
+            
+            
+            /*    Greenfoot.playSound("button_click.mp3");
+               String userName = JOptionPane.showInputDialog("Enter Name");
+               if(userName==null || userName.equals("")){
+                   JOptionPane.showMessageDialog(null, "Username is mandatory to start game");
+                }
+            else{
+                 System.out.println(userName+" Game Level selection");
+                Greenfoot.setWorld(new GameTypeSelect(userName));
+                } */
         }
         if(stopfall()==true)
         {

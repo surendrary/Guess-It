@@ -3,6 +3,7 @@ import org.restlet.resource.ClientResource;
 import org.restlet.representation.Representation;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.data.Form;
+import org.json.JSONObject;
 
 /**
  * Write a description of class EasyGameButton here.
@@ -10,7 +11,7 @@ import org.restlet.data.Form;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class EasyGameButton extends Actor
+public class EasyGameButton extends Actor 
 {
     
     String playerName = "";
@@ -18,7 +19,7 @@ public class EasyGameButton extends Actor
     boolean isMultiplayer;
     boolean isHost;
     String gameName= "";
-    private static String service_url = "http://localhost:8080/restlet/guessit/database";
+    private static String service_url = "https://guessit-webservice.herokuapp.com/rest/guessit/database";
  
     /**
      * Constructor for objects of class EasyGameButton.
@@ -43,17 +44,20 @@ public class EasyGameButton extends Actor
         if(Greenfoot.mousePressed(this)){
             Greenfoot.playSound("button_click.mp3");
             ClientResource guessDatabaseResource = new ClientResource(service_url);
-		// Representation result = guessDatabaseResource.get();
-		Form form = new Form();
-		if(this.isHost && this.isMultiplayer){
-		     form.add("host", this.playerName);
+            JSONObject obj = new JSONObject();
+        // Representation result = guessDatabaseResource.get();
+        Form form = new Form();
+        if(this.isHost && this.isMultiplayer){
+             obj.put("host", this.playerName);
          }
         else if(this.isMultiplayer){
-             form.add("host",this.playerName);
+             obj.put("host",this.playerName);
         }
-		form.add("level", "Easy");
-		form.add("gameName", this.gameName);
-		Representation result = guessDatabaseResource.post(form);
+        obj.put("level", "Easy");
+        obj.put("gameName", this.gameName);
+        System.out.println(obj);
+        Representation result = guessDatabaseResource.post(obj);
+        System.out.println(result);
         Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy"));
         }
     }   

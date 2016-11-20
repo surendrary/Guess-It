@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=JoinGameButton
-comment0.text=\n\ This\ class\ implens\ the\ beviour\ of\ 'Join\ Game'\ button.On\ clicking\ this\ button,\ user\ will\ be\ asked\ to\ enter\ a\ existing\ active\ game\ id\ in\ option\ pain.\n\ Afters\ words\ a\ validation\ check\ will\ be\ done,\ if\ user\ enters\ a\ valid\ game\ id,\ then\ user\ will\ be\ connected\ to\ that\ game\ instance\n\ \n\ \n\ @author\ Green\ Techies\n\ @version\ 1.0\n
+comment0.text=\r\n\ This\ class\ implens\ the\ beviour\ of\ 'Join\ Game'\ button.On\ clicking\ this\ button,\ user\ will\ be\ asked\ to\ enter\ a\ existing\ active\ game\ id\ in\ option\ pain.\r\n\ Afters\ words\ a\ validation\ check\ will\ be\ done,\ if\ user\ enters\ a\ valid\ game\ id,\ then\ user\ will\ be\ connected\ to\ that\ game\ instance\r\n\ \r\n\ \r\n\ @author\ Green\ Techies\r\n\ @version\ 1.0\r\n
 comment1.params=playerName
 comment1.target=JoinGameButton(java.lang.String)
 comment2.params=

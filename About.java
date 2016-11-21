@@ -30,3 +30,4 @@ public class About extends Actor
     }    
 }
 }
+/* The about page contains the description about the optimality algorithm */

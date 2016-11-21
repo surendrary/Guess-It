@@ -1,4 +1,4 @@
-package com;
+ 
 import java.util.Random;
 
 import javax.ws.rs.GET;

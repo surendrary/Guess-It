@@ -20,13 +20,9 @@ public class MultiplayerHome extends World
     public MultiplayerHome(String userName)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(850, 650, 1);
-        //this.playerName = playerName; 
-        
+        super(850, 650, 1);        
         this.userName = userName;
-        System.out.println(" Multiplayer Home " + this.userName);
         prepare();
-       // setupGameTypeSelect();
     }
     
     /**
@@ -45,20 +41,14 @@ public class MultiplayerHome extends World
         getBackground().drawString("Please select one the options to initialize your game", 50, 170);
         
         Greenfoot.setSpeed(50);
-        System.out.println("Join Button1surendra"+this.test+"Join Button1surendra");
         JoinGameButton joingame = new JoinGameButton(this.userName);
-        System.out.println(this.userName);
         addObject(joingame,(backgroundImage.getWidth()/2)-100,backgroundImage.getHeight()+200);
     
-        System.out.println(this.userName+" Multiplayer Home");
         HostGameButton hostgame = new HostGameButton(this.userName,true,true);
         addObject(hostgame,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+200);
         
         CloseButton closebutton = new CloseButton();
         addObject(closebutton,getWidth()/2+410,(getHeight()-640));
-        
-        
-        //rushin
         BackButton bb = new BackButton();
         addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+275);
     

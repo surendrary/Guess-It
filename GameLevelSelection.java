@@ -7,7 +7,7 @@ import java.awt.Font;
  * In Single Player, it will appread in this sequence SinglePlayer -> Select Level
  * 
  * @author Green Techies
- * @version 1.0
+ * @version 1.
  */
 public class GameLevelSelection extends World
 {
@@ -25,7 +25,6 @@ public class GameLevelSelection extends World
     {    
        super(850, 650, 1);
        this.playerName = playerName; 
-        System.out.println(this.playerName+" Game Level selection");
        this.isMultiplayer = isMultiplayer;
        this.isHost = isHost;
        this.gameName = gameName;
@@ -54,13 +53,11 @@ public class GameLevelSelection extends World
         
         EasyGameButton easygame=new EasyGameButton(this.playerName,this.gameName,this.isMultiplayer,this.isHost);
         addObject(easygame,backgroundImage.getWidth()/2+100,250);
-        HardGameButton hardhame=new HardGameButton();
+        HardGameButton hardhame=new HardGameButton(this.playerName,this.gameName,this.isMultiplayer,this.isHost);
         addObject(hardhame,backgroundImage.getWidth()/2 +100,400);
         
         //rushin
         BackButton bb = new BackButton();
-        addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+275);
-        
-                
+        addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+275);       
     }
 }

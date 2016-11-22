@@ -26,12 +26,16 @@ public class CloseButton extends Actor
           Greenfoot.playSound("button_click.mp3");
           String message= "Do you really want to quit?";
           String title= "CONFIRM TO QUIT !!!";
-          //Displaying confirmation dialog box. @rushin
           int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
           if (reply == JOptionPane.YES_OPTION)
           {
-              System.exit(0); 
-            }
+              if(getWorldOfType(GamePlayWorld.class).backgroundMusic!=null){
+              getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
+              }
+              GuessItWorld gameWorld=new GuessItWorld();
+              gameWorld.started();
+              Greenfoot.setWorld(gameWorld);
+          }
           else
           {
             

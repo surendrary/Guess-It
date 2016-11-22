@@ -17,19 +17,17 @@ import org.restlet.data.Form;
 public class JoinGameButton extends Actor
 {
     
-/**
+     /**
      * Constructor for objects of class LessThanButton
      */
-    private static String service_url = "http://localhost:8080/restlet/guessit/database";
-     boolean isMultiplayer;
-     String playerName = "";
+    private static String service_url = "https://guessit-webservice.herokuapp.com/rest/guessit/database";
+    boolean isMultiplayer;
+    String playerName = "";
     boolean isHost;
     public JoinGameButton(String playerName)
     {
         GreenfootImage image = new GreenfootImage("join game.png");
-        System.out.println(this.playerName+"Join Button ");
         setImage(image);
-        System.out.println(playerName);
         this.playerName=playerName;
     }
 
@@ -47,9 +45,8 @@ public class JoinGameButton extends Actor
         ClientResource guessDatabaseResource = new ClientResource(service_url);
         Form form = new Form(); 
         form.add("playername",this.playerName);
-            form.add("gameId",userName);
+        form.add("gameId",userName);
 		Representation result = guessDatabaseResource.put(form);
-		System.out.println("Helllo");
         Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy"));
          }
       }

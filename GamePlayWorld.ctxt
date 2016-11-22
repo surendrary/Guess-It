@@ -6,7 +6,6 @@ comment1.target=GamePlayWorld(java.lang.String,\ java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GamePlayWorld.\r\n\ \r\n
 comment2.params=
 comment2.target=int\ getnumberguess()
-comment2.text=public\ void\ updateGuessNumber()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ this.numberOfGuess+\=1;\r\n\ \ \ \ \ \ \ \ System.out.println("new\ value\:"+this.numberOfGuess);\r\n}
 comment3.params=
 comment3.target=void\ setUpGame()
 comment3.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\r\n\ objects\ and\ add\ them\ to\ the\ world.\r\n

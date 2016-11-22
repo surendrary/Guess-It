@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=GuessDatabaseResource
 comment1.params=
-comment1.target=org.restlet.ext.json.JsonRepresentation\ represent()
+comment1.target=javax.ws.rs.core.Response\ represent()
 comment2.params=entity
-comment2.target=org.restlet.ext.json.JsonRepresentation\ hostGame(org.restlet.representation.Representation)
+comment2.target=java.lang.String\ hostGame(Game)
 comment3.params=entity
 comment3.target=org.restlet.ext.json.JsonRepresentation\ joinGame(org.restlet.representation.Representation)
 comment4.params=gameName

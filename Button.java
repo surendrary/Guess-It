@@ -15,6 +15,7 @@ public class Button extends Actor
     public Button()
     {
         GreenfootImage image = new GreenfootImage("play_button.png");
+        image.scale(150,150);
         setImage(image);
     }
     
@@ -27,18 +28,7 @@ public class Button extends Actor
             InvokerImpl in = new InvokerImpl();
             in.setCommand(command);
             
-            in.invoke();           
-            
-            
-            /*    Greenfoot.playSound("button_click.mp3");
-               String userName = JOptionPane.showInputDialog("Enter Name");
-               if(userName==null || userName.equals("")){
-                   JOptionPane.showMessageDialog(null, "Username is mandatory to start game");
-                }
-            else{
-                 System.out.println(userName+" Game Level selection");
-                Greenfoot.setWorld(new GameTypeSelect(userName));
-                } */
+            in.invoke();       
         }
         if(stopfall()==true)
         {
@@ -47,30 +37,6 @@ public class Button extends Actor
         }  
     }
     
-    private Connection getConnection(){
-        
-        DBConnection db = new DBConnection();
-        Connection conn = db.getConnection();
-         System.out.println("conn"+conn);
-         
-        return conn;
-    }
-    private void saveUser(String username){
-        Connection connection = getConnection();
-        try{
-        String sql = "Insert into guessdb.user(user_name) values('"+username+ "')";
-        PreparedStatement st = null; 
-        st = connection.prepareStatement(sql); 
-        st.execute(sql);
-        //ResultSet rs = st.executeQuery(sql);
-          //  while (rs.next()){
-            //        System.out.println(rs.getInt(1));
-              //}
-        }
-        catch(Exception e){
-            System.out.println(e); 
-        }
-    }
     public boolean stopfall()
     {
         if(getX()>400)    

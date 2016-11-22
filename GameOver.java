@@ -15,8 +15,6 @@ public class GameOver extends World
      */
     public GameOver()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        
         super(850, 650, 1); 
         setUp();
        
@@ -24,19 +22,14 @@ public class GameOver extends World
     
     private void setUp()
     {
-    
         GreenfootImage backgroundImage = new GreenfootImage("GameOver4.jpg");
         setBackground(backgroundImage);
         //GreenfootImage image = new GreenfootImage("GameOver.png");
         //setImage(image);
         CloseButton closebutton = new CloseButton();
         addObject(closebutton,getWidth()/2+410,(getHeight()-640));
-      
-        
         // redirects back to home page
         HomeButton hb = new HomeButton();
         addObject(hb,40,getHeight()-610);
-        
-        
     }
 }

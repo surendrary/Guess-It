@@ -48,15 +48,6 @@ public class GuessItWorld extends World
         
         //About about = new About();
         //addObject(about,getWidth()/2-250,(getHeight()-565));
-        
-       
-        
-        ViewScoresButton vs=new ViewScoresButton();
-        addObject(vs,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+200);
-        
-        
-        
-        
     }
     
     
@@ -75,7 +66,6 @@ public class GuessItWorld extends World
     
     public void started()
     {
-    
         GameTitle gametitle=new GameTitle(); 
         addObject(gametitle,307 ,0);
         //Greenfoot.delay(10);
@@ -90,13 +80,6 @@ public class GuessItWorld extends World
         
         About about = new About();
         addObject(about,getWidth()/2-250,(getHeight()-565));
-        
-       
-        //ViewScoresButton vs=new ViewScoresButton();
-        //addObject(vs,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+200); 
-        
-       
-        
     }
     
     

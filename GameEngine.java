@@ -44,13 +44,10 @@ public class GameEngine extends Actor
             JSONObject jsonObj = jsonRepresentation.getJsonObject();
             String guess = jsonObj.get("guessedNumber").toString();
             computerGuess=Integer.parseInt(guess); 
-            System.out.println(computerGuess);
-            
- 
-         } catch ( Exception e ) 
-         {
-                 //
-          }
+         } 
+         catch ( Exception e ) {
+            e.printStackTrace(); 
+         }
       getWorldOfType(GamePlayWorld.class).computerGuess = computerGuess; 
     }
 

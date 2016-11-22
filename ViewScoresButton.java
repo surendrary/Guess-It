@@ -18,9 +18,8 @@ public class ViewScoresButton extends Actor
     {
        if(Greenfoot.mousePressed(this)){
            Greenfoot.setWorld(new ScoreBoardWorld());
-            Greenfoot.playSound("button_click.mp3");
-           System.out.println("view score clicked");
-            }
+           Greenfoot.playSound("button_click.mp3");
+          }
         }
     }    
 

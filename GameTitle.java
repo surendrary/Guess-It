@@ -19,14 +19,9 @@ public class GameTitle extends Actor
      */
     public GameTitle()
     {
-        
-        
         GreenfootImage image = new GreenfootImage("game_title_header.png");
         image.scale(400,150); 
         setImage(image);
-        
-        
-    
     }
     
     public void act() 

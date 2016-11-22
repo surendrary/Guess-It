@@ -17,7 +17,6 @@ public class HostGameButton extends Actor
         GreenfootImage image = new GreenfootImage("host game.png");
         setImage(image);
         this.username = playerName;
-        System.out.println(" Host button " + this.username);
         this.gameName = gameName;
     }
 

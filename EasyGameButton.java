@@ -28,7 +28,6 @@ public class EasyGameButton extends Actor
     public EasyGameButton(String playerName,String gameName,boolean isMultiplayer, boolean isHost)
     {    
        this.playerName = playerName; 
-       System.out.println(this.playerName+" Easy Game button");
        this.gameName = gameName;
        this.isMultiplayer = isMultiplayer;
        this.isHost = isHost;
@@ -45,8 +44,6 @@ public class EasyGameButton extends Actor
             Greenfoot.playSound("button_click.mp3");
             ClientResource guessDatabaseResource = new ClientResource(service_url);
             JSONObject obj = new JSONObject();
-        // Representation result = guessDatabaseResource.get();
-        Form form = new Form();
         if(this.isHost && this.isMultiplayer){
              obj.put("host", this.playerName);
          }
@@ -55,9 +52,7 @@ public class EasyGameButton extends Actor
         }
         obj.put("level", "Easy");
         obj.put("gameName", this.gameName);
-        System.out.println(obj);
         Representation result = guessDatabaseResource.post(obj);
-        System.out.println(result);
         Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy"));
         }
     }   

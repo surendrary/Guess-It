@@ -26,6 +26,7 @@ public class GamePlayWorld extends World
     public static int numberOfGuess = 0;
     public static QueryResultBox queryResultBox = new QueryResultBox();
     public static Map<String,Boolean> previousQueryResultMap = new HashMap<String,Boolean>();
+    GreenfootSound backgroundMusic = new GreenfootSound("background_loop.mp3");
     
     /**
      * Constructor for objects of class GamePlayWorld.
@@ -38,13 +39,6 @@ public class GamePlayWorld extends World
        this.gameLevel = gameLevel;
        setUpGame();
     }
-    
-     //
-    /*public void updateGuessNumber()
-    {
-        this.numberOfGuess+=1;
-        System.out.println("new value:"+this.numberOfGuess);
-    }*/
     
     public int getnumberguess()
     {
@@ -63,9 +57,6 @@ public class GamePlayWorld extends World
 
         GreenfootImage backgroundImage = new GreenfootImage("home_page_Background.jpg");
         setBackground(backgroundImage); 
-        //getBackground().setColor(Color.red);
-        //getBackground().setFont(new Font("", Font.BOLD, 50));
-        //getBackground().drawString("GUESS IT", backgroundImage.getWidth()/2, 70);
         GreenfootImage game_Name = new GreenfootImage("game_title_header.png");
         getBackground().drawImage(game_Name, backgroundImage.getWidth()/2 - 85, 10);
         
@@ -119,18 +110,15 @@ public class GamePlayWorld extends World
         
         //update number to zero on load
         this.numberOfGuess = 0;
-        
-        
         //rushin
         BackButton bb = new BackButton();
-        addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+275);
+        addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+230);
         
-      
-        
+        ViewScoresButton vs=new ViewScoresButton();
+        addObject(vs,(backgroundImage.getWidth()/2-65),backgroundImage.getHeight()+230);
     }
     
     public void UpdateGuess(){ 
-    
         Message Score = new Message();
         Score.setImage(new GreenfootImage("Guess : " + numberOfGuess, 34, Color.RED, Color.BLACK));
         this.addObject(Score,getWidth()-100,30);
@@ -138,7 +126,7 @@ public class GamePlayWorld extends World
    
     public void act() 
     {
-        
+        backgroundMusic.playLoop();
         int msSinceLast = (int)(System.currentTimeMillis()- startTime);
         // durationMillis is in milliseconds, so you
         // can convert to seconds/minutes whatever:

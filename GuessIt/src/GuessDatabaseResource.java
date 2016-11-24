@@ -46,6 +46,42 @@ public class GuessDatabaseResource extends ServerResource {
 		}
 		return new JsonRepresentation(gameObject);
 	}
+	
+	@Post
+	public JsonRepresentation insertScore(Representation entity) throws IOException
+	{
+		String dbURI = "mongodb://guessitadmin:techadmin@ds151137.mlab.com:51137/guessit";
+		MongoClient mongoClient = new MongoClient(new MongoClientURI(dbURI));
+		DB db = mongoClient.getDB("guessit");
+		DBCollection gameCollection = db.getCollection("gameTable");
+
+		 Form userForm = new Form(entity);
+		 String gameId = userForm.getFirstValue("gameId");
+		 String time = userForm.getFirstValue("time");
+		 String moves = userForm.getFirstValue("moves");
+				 
+	     DBObject foundGame = findGame(userForm.getFirstValue("gameId"));
+	    
+	        if (foundGame==null) 
+	        {
+	        	return new JsonRepresentation("Game Does Not Exists");
+	        }
+	        else
+	        {
+	        	BasicDBObject updateQuery = new BasicDBObject();
+	            updateQuery.put( "gameName", gameId );
+	            
+	            BasicDBObject updateCommand = new BasicDBObject();
+	            HashMap<String, String> map = new HashMap<String, String>();
+	            map.put("time", time);
+	            map.put("moves",moves);
+	            updateCommand.put( "$push", new BasicDBObject( "score", map ) );
+	            WriteResult result = gameCollection.update( updateQuery, updateCommand, true, true );
+	        	
+	            mongoClient.close();
+	        }
+        	return new JsonRepresentation("");
+	}
 
 	@Post
 	public JsonRepresentation hostGame(Representation entity) throws IOException {

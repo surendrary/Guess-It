@@ -28,6 +28,8 @@ public class GamePlayWorld extends World
     public static Map<String,Boolean> previousQueryResultMap = new HashMap<String,Boolean>();
     GreenfootSound backgroundMusic = new GreenfootSound("background_loop.mp3");
     
+    
+    
     /**
      * Constructor for objects of class GamePlayWorld.
      * 

@@ -23,8 +23,8 @@ public class GuessButton extends Actor
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
           if(getWorldOfType(GamePlayWorld.class).backgroundMusic!=null){
-              getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
-            }
+             getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
+         }
           Greenfoot.playSound("button_click.mp3");
           getWorldOfType(GamePlayWorld.class).operator="guess";
           GameEngine gameEngine = getWorldOfType(GamePlayWorld.class).gameEngine;

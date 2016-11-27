@@ -30,8 +30,8 @@ public class CloseButton extends Actor
           if (reply == JOptionPane.YES_OPTION)
           {
               if(getWorldOfType(GamePlayWorld.class).backgroundMusic!=null){
-              getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
-              }
+				getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
+				}
               GuessItWorld gameWorld=new GuessItWorld();
               gameWorld.started();
               Greenfoot.setWorld(gameWorld);

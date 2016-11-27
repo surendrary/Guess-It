@@ -33,8 +33,9 @@ public class StringInputBox extends TextBox
         
         MouseInfo mouse = Greenfoot.getMouseInfo();
        if (key == null) return; 
-       else if( this.getX()-150 < mouse.getX() &&  mouse.getX() < this.getX()+150 && getWorld().getHeight()/2 > mouse.getY() && mouse.getY()> this.getY() -60)
-       {
+      // else if( this.getX()-150 < mouse.getX() &&  mouse.getX() < this.getX()+150 && getWorld().getHeight()/2 > mouse.getY() && mouse.getY()> this.getY() -60)
+      else if(true) 
+      {
            
            try{
                if ("backspace".equals(key) && text.length() > 0){

@@ -41,7 +41,7 @@ public class GameRules extends World
         
         //Add a back button to back to game's main page
         BackButton backButton = new BackButton();
-        addObject(backButton,getWidth()/2-300,(getHeight()-565));
+        addObject(backButton,35,backgroundImage.getHeight()+275);
         
         CloseButton closebutton = new CloseButton();
         addObject(closebutton,getWidth()/2+410,(getHeight()-640));

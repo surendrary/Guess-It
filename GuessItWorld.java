@@ -76,10 +76,10 @@ public class GuessItWorld extends World
         addObject(gameDiagram,410,0); 
         
         Rules rules = new Rules();
-        addObject(rules,getWidth()/2-300,(getHeight()-565));
+        addObject(rules,25,30);
         
         About about = new About();
-        addObject(about,getWidth()/2-250,(getHeight()-565));
+        addObject(about,70,30);
     }
     
     

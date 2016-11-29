@@ -58,6 +58,6 @@ public class GameLevelSelection extends World
         
         //rushin
         BackButton bb = new BackButton();
-        addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+275);       
+        addObject(bb,35,backgroundImage.getHeight()+275);       
     }
 }

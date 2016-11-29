@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import javax.swing.JOptionPane;
 /**
  * Write a description of class BackButton here.
  * 
@@ -39,16 +39,30 @@ public class BackButton extends Actor
            }
           else if(world instanceof GamePlayWorld)
             {
+                
+              String message= "You will lose your progress.Do you really want to go back?";
+              String title= "CONFIRMATION !!!";
+              int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
+              if (reply == JOptionPane.YES_OPTION)
+                {
+                    
+                if(getWorldOfType(GamePlayWorld.class).backgroundMusic!=null)
+                {
+                getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
+                }
+                
                 String name = getWorldOfType(GamePlayWorld.class).playerName;
                 System.out.print(name);
                 Greenfoot.setWorld(new GameTypeSelect(name));
+                
             }
+        }
           else if(world instanceof MultiplayerHome)
             {
                 String name = getWorldOfType(MultiplayerHome.class).userName;
                 System.out.print(name);
                 Greenfoot.setWorld(new GameTypeSelect(name));
-            }
+               }
             
           else if(world instanceof GameLevelSelection)
             {
@@ -78,3 +92,4 @@ public class BackButton extends Actor
     
     }
 }
+

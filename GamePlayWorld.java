@@ -117,7 +117,7 @@ public class GamePlayWorld extends World
         this.numberOfGuess = 0;
         //rushin
         BackButton bb = new BackButton();
-        addObject(bb,(backgroundImage.getWidth()/2)+350,backgroundImage.getHeight()+230);
+        addObject(bb,35,backgroundImage.getHeight()+275);
         
         ViewScoresButton vs=new ViewScoresButton();
         addObject(vs,(backgroundImage.getWidth()/2-65),backgroundImage.getHeight()+230);

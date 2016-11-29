@@ -22,24 +22,41 @@ public class CloseButton extends Actor
     {
         // Add your action code here.
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
-      if(Greenfoot.mouseClicked(this)){
+      if(Greenfoot.mouseClicked(this))
+      {
+          
           Greenfoot.playSound("button_click.mp3");
+          World world = getWorld();
+           if(world instanceof GamePlayWorld)
+            {
+              String message= "You will lose your progress.Do you really want to quit?";
+              String title= "CONFIRMATION !!!";
+              int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
+              if (reply == JOptionPane.YES_OPTION)
+                {
+              if(getWorldOfType(GamePlayWorld.class).backgroundMusic!=null)
+              {
+                getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
+                }
+              GuessItWorld gameWorld=new GuessItWorld();
+              gameWorld.started();
+              Greenfoot.setWorld(gameWorld);
+                }  
+              
+              }
+          else
+          {
           String message= "Do you really want to quit?";
           String title= "CONFIRM TO QUIT !!!";
           int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
           if (reply == JOptionPane.YES_OPTION)
-          {
-              if(getWorldOfType(GamePlayWorld.class).backgroundMusic!=null){
-				getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
-				}
+             {
               GuessItWorld gameWorld=new GuessItWorld();
               gameWorld.started();
               Greenfoot.setWorld(gameWorld);
-          }
-          else
-          {
-            
-            }
-    }   
+              }
+        
+          }   
+       }
     }
 }

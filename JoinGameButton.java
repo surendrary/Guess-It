@@ -47,7 +47,7 @@ public class JoinGameButton extends Actor
         obj.put("playerName",this.playerName);
         obj.put("gameName",gameName);
 		Representation result = guessDatabaseResource.put(obj);
-        Greenfoot.setWorld(new GamePlayWorld(playerName,"easy"));
+        Greenfoot.setWorld(new GamePlayWorld(playerName,"easy",gameName));
         }
       }
     }

@@ -53,7 +53,7 @@ public class HardGameButton extends Actor
         obj.put("level", "Easy");
         obj.put("gameName", this.gameName);
         Representation result = guessDatabaseResource.post(obj);
-        Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard"));
+        Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard",gameName));
         }
     }    
 }

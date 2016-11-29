@@ -53,7 +53,7 @@ public class EasyGameButton extends Actor
         obj.put("level", "Easy");
         obj.put("gameName", this.gameName);
         Representation result = guessDatabaseResource.post(obj);
-        Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy"));
+        Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy",getWorldOfType(GameLevelSelection.class).gameName));
         }
     }   
 }

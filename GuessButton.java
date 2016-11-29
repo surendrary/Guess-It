@@ -39,6 +39,7 @@ public class GuessButton extends Actor
           int numberOfGuess = getWorldOfType(GamePlayWorld.class).numberOfGuess;
           String playerName = getWorldOfType(GamePlayWorld.class).playerName;
           String gameName = getWorldOfType(GamePlayWorld.class).gameName;
+          int time = getWorldOfType(GamePlayWorld.class).time_elapsed;
           if(gameEngine.enterendInput <1 )
             JOptionPane.showMessageDialog(null, "Please Enter a number to guess");
           else if(gameEngine.enterendInput==gameEngine.computerGuess){
@@ -57,11 +58,12 @@ public class GuessButton extends Actor
             
             obj.put("playerName", playerName);
             obj.put("gameName", gameName);
-            obj.put("numberOfGuess", numberOfGuess);
+            obj.put("turns", numberOfGuess);
+            obj.put("time", getWorldOfType(GamePlayWorld.class).time_elapsed);
             
             Representation result = guessDatabaseResource.post(obj);
             
-            Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard"));
+            Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard",gameName));
             
             
           }

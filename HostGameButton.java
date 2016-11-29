@@ -17,7 +17,6 @@ public class HostGameButton extends Actor
         GreenfootImage image = new GreenfootImage("host game.png");
         setImage(image);
         this.username = playerName;
-        this.gameName = gameName;
     }
 
     /**
@@ -31,7 +30,10 @@ public class HostGameButton extends Actor
            if(gameName.equals("")){
                JOptionPane.showMessageDialog(null, "Game id is mandatory to host a multiplayer game");
             }
-           Greenfoot.setWorld(new GameLevelSelection(username,true,true,gameName)); 
+           else{ 
+               Greenfoot.setWorld(new GameLevelSelection(username,true,true,gameName)); 
+           
+        }
       }
     }
     }

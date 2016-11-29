@@ -35,11 +35,12 @@ public class GamePlayWorld extends World
      * Constructor for objects of class GamePlayWorld.
      * 
      */
-    public GamePlayWorld(String playerName,String gameLevel)
+    public GamePlayWorld(String playerName,String gameLevel, String gameName)
     {    
        super(850, 650, 1);
        this.playerName = playerName; 
        this.gameLevel = gameLevel;
+       this.gameName = gameName;
        setUpGame();
     }
     

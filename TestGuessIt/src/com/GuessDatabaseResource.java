@@ -7,6 +7,7 @@ import java.util.UUID;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -20,6 +21,7 @@ import org.restlet.representation.Representation;
 import org.restlet.resource.Post;
 import org.restlet.resource.Put;
 
+import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DB;
@@ -72,10 +74,14 @@ public class GuessDatabaseResource {
 		DBObject foundGame = findGame(gameName);
 		if (foundGame == null) {
 			BasicDBObjectBuilder docBuilder = BasicDBObjectBuilder.start();
+			BasicDBList asList1 = new BasicDBList();
+			BasicDBList asList2 = new BasicDBList();
 			docBuilder.append("_id", id);
 			docBuilder.append("host", host);
 			docBuilder.append("level", gameLevel);
 			docBuilder.append("gameName", gameName);
+			docBuilder.append("players", asList1);
+			docBuilder.append("score", asList2);
 			DBObject gameObject = docBuilder.get();
 			gameCollection.insert(gameObject);
 			mongoClient.close();

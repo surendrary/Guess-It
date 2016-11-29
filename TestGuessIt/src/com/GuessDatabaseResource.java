@@ -83,65 +83,34 @@ public class GuessDatabaseResource {
 		}
 		return "Error! Game already Exists";
 	}
-
-	@Put
-	public JsonRepresentation joinGame(Representation entity) throws JSONException {
-
+	
+	@PUT
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.TEXT_PLAIN })
+	public String joinGame(Game entity) throws JSONException {
 		String dbURI = "mongodb://guessitadmin:techadmin@ds151137.mlab.com:51137/guessit";
 		MongoClient mongoClient = new MongoClient(new MongoClientURI(dbURI));
 		DB db = mongoClient.getDB("guessit");
 		DBCollection gameCollection = db.getCollection("gameTable");
-
-		Form userForm = new Form(entity);
-		DBObject foundGame = findGame(userForm.getFirstValue("gameId"));
+		DBObject foundGame = findGame(entity.getGameName());
 
 		if (foundGame == null) {
-			return new JsonRepresentation("Game Does Not Exists");
-			/// JSONObject gameObject = new JSONObject(foundGame);
-			// JSONArray userArray = gameObject.getJSONArray("users");
+			return "Game Does Not Exists";
+		} else {
 
-			// int length = userArray.length();
-			// userArray[length]serForm.getFirstValue("user");
+			BasicDBObject updateQuery = new BasicDBObject();
+			updateQuery.put("gameName", entity.getGameName());
+
+			BasicDBObject updateCommand = new BasicDBObject();
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("playerName", entity.getPlayerName());
+			updateCommand.put("$push", new BasicDBObject("players", map));
+			WriteResult result = gameCollection.update(updateQuery, updateCommand, true, true);
+
+			mongoClient.close();
 		}
-		return new JsonRepresentation("");
+		return "Joined";
 	}
-	
-	@Post
-	@Path("/updateScore")
- 	public JsonRepresentation insertScore(Representation entity) throws IOException
- 	{
- 		String dbURI = "mongodb://guessitadmin:techadmin@ds151137.mlab.com:51137/guessit";
- 		MongoClient mongoClient = new MongoClient(new MongoClientURI(dbURI));
- 		DB db = mongoClient.getDB("guessit");
- 		DBCollection gameCollection = db.getCollection("gameTable");
- 
- 		 Form userForm = new Form(entity);
- 		 String gameId = userForm.getFirstValue("gameId");
- 		 String time = userForm.getFirstValue("time");
- 		 String moves = userForm.getFirstValue("moves");
- 				 
- 	     DBObject foundGame = findGame(userForm.getFirstValue("gameId"));
- 	    
- 	        if (foundGame==null) 
- 	        {
- 	        	return new JsonRepresentation("Game Does Not Exists");
- 	        }
- 	        else
- 	        {
- 	        	BasicDBObject updateQuery = new BasicDBObject();
- 	            updateQuery.put( "gameName", gameId );
- 	            
- 	            BasicDBObject updateCommand = new BasicDBObject();
- 	            HashMap<String, String> map = new HashMap<String, String>();
- 	            map.put("time", time);
- 	            map.put("moves",moves);
- 	            updateCommand.put( "$push", new BasicDBObject( "score", map ) );
- 	            WriteResult result = gameCollection.update( updateQuery, updateCommand, true, true );
- 	        	
- 	            mongoClient.close();
- 	        }
-         	return new JsonRepresentation("");
- 	}
 
 	private DBObject findGame(String gameName) throws JSONException {
 		String dbURI = "mongodb://guessitadmin:techadmin@ds151137.mlab.com:51137/guessit";

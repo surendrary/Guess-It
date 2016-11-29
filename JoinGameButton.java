@@ -5,6 +5,7 @@ import org.restlet.resource.ClientResource;
 import org.restlet.representation.Representation;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.data.Form;
+import org.json.JSONObject;
 
 /**
  * This class implens the beviour of 'Join Game' button.On clicking this button, user will be asked to enter a existing active game id in option pain.
@@ -31,24 +32,23 @@ public class JoinGameButton extends Actor
         this.playerName=playerName;
     }
 
-    public void act()
+   public void act()
     {
       if(Greenfoot.mousePressed(this)){
            Greenfoot.playSound("button_click.mp3");
-           String userName = JOptionPane.showInputDialog("Enter Game ID to join");
-           if(userName.equals("")){
+           String gameName = JOptionPane.showInputDialog("Enter Game ID to join");
+           if(gameName.equals("")){
                JOptionPane.showMessageDialog(null, "Game id is mandatory to join a multiplayer game");
             }
-        else{
-           
+        else{    
         Greenfoot.playSound("button_click.mp3");
         ClientResource guessDatabaseResource = new ClientResource(service_url);
-        Form form = new Form(); 
-        form.add("playername",this.playerName);
-        form.add("gameId",userName);
-		Representation result = guessDatabaseResource.put(form);
-        Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy"));
-         }
+        JSONObject obj = new JSONObject();
+        obj.put("playerName",this.playerName);
+        obj.put("gameName",gameName);
+		Representation result = guessDatabaseResource.put(obj);
+        Greenfoot.setWorld(new GamePlayWorld(playerName,"easy"));
+        }
       }
     }
     

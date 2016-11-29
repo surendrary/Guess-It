@@ -21,6 +21,7 @@ public class GameEngine extends Actor
     public String playerName = "";
     public String gameLevel="";
     private final String service_url = "http://localhost:8080/restlet/guessit";
+    public static int maxTurns = 20;
 
     /**
      * Constructor for objects of class GameEngine
@@ -62,10 +63,15 @@ public class GameEngine extends Actor
         //
     }
     
-    public boolean query(){
+    public int query(int numberOfGuess){
         boolean queryResult = false;
+        int resp = 0;
         StringBuilder queryBuilder = new StringBuilder();
         queryBuilder.append("Guessed Number ");
+        if(numberOfGuess>maxTurns){
+            resp = 2;
+        }
+        else{
         switch(chosedOperation){
           case "gt":
            queryResult = (computerGuess > enterendInput);
@@ -80,8 +86,11 @@ public class GameEngine extends Actor
            queryBuilder.append(" / by " + enterendInput);
            break;
         }
+         if(queryResult)
+            resp=1;
+    }
         getWorldOfType(GamePlayWorld.class).previousQueryResultMap.put(queryBuilder.toString(),queryResult);
-        return queryResult;
+        return resp;
     }
     
     

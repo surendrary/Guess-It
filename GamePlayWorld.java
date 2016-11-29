@@ -58,7 +58,8 @@ public class GamePlayWorld extends World
     {
         // starting time recorded
         long startTime = System.currentTimeMillis();
-
+        if(gameLevel.equalsIgnoreCase("hard"))
+            gameEngine.maxTurns = 10;           
         GreenfootImage backgroundImage = new GreenfootImage("home_page_Background.jpg");
         setBackground(backgroundImage); 
         GreenfootImage game_Name = new GreenfootImage("game_title_header.png");

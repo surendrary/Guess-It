@@ -34,14 +34,14 @@ public class QueryButton extends Actor
           else if(gameEngine.enterendInput <1 )
             JOptionPane.showMessageDialog(null, "Please Enter a number");
           else{
-          boolean isRightQuery = gameEngine.query();
+          int isRightQuery = gameEngine.query((getWorldOfType(GamePlayWorld.class).numberOfGuess)+1);
           getWorldOfType(GamePlayWorld.class).numberOfGuess +=1;
           
           //gets the string box object and clears it for next input. @rushin
           StringInputBox sb=getWorldOfType(GamePlayWorld.class).getObjects(StringInputBox.class).get(0);
           sb.clearText();
           
-          if(isRightQuery){
+          if(isRightQuery==1){
             Message sampleMessage = new Message();
             sampleMessage.setText("Right, Continue Guessing!!");
             getWorld().addObject(sampleMessage, 300, 300); 
@@ -49,7 +49,7 @@ public class QueryButton extends Actor
             getWorld().removeObject(sampleMessage);
             getWorldOfType(GamePlayWorld.class).UpdateGuess();
            }
-          else{
+          else if(isRightQuery==0){
             Message sampleMessage = new Message();
             sampleMessage.setText(" No, Continue Guessing!!");
             getWorld().addObject(sampleMessage, 300, 300);
@@ -57,6 +57,15 @@ public class QueryButton extends Actor
             getWorld().removeObject(sampleMessage);
             getWorldOfType(GamePlayWorld.class).UpdateGuess(); 
             } 
+           else{
+               Message sampleMessage = new Message();
+                sampleMessage.setText("You lost!! Out of turns");
+                getWorld().addObject(sampleMessage, 300, 300);
+                Greenfoot.delay(100);
+                getWorld().removeObject(sampleMessage);
+                Greenfoot.setWorld(new GameOver()); 
+               
+               }
           // Now Remove all static variable values and also clears the text filed 
           World world = getWorld();
           getWorldOfType(GamePlayWorld.class).operator = "";

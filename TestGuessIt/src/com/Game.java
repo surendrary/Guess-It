@@ -35,4 +35,11 @@ public class Game {
 	private String level;
 	private String gameName;
 	private UUID gameId;
+	private String playerName;
+	public String getPlayerName() {
+		return playerName;
+	}
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
 }

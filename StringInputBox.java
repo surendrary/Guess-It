@@ -41,6 +41,8 @@ public class StringInputBox extends TextBox
                if ("backspace".equals(key) && text.length() > 0){
                    text = text.substring(0, text.length() - 1);
                    updateImage();
+                   inputNumber = Integer.parseInt(text);
+                   getWorldOfType(GamePlayWorld.class).enteredNumber = inputNumber;    
                 }
                else if ("escape".equals(key)) key = "";
                else if ("space".equals(key)) key = "";

@@ -42,6 +42,11 @@ public class GuessButton extends Actor
           if(gameEngine.enterendInput <1 )
             JOptionPane.showMessageDialog(null, "Please Enter a number to guess");
           else if(gameEngine.enterendInput==gameEngine.computerGuess){
+              
+            //fetch time taken by the user to make the right guess
+            System.out.println("Time taken: "+ getWorldOfType(GamePlayWorld.class).time_elapsed + " seconds");
+            
+            
             Message sampleMessage = new Message();
             Greenfoot.playSound("congratulations.mp3");
             sampleMessage.setText("Cogratulations!!!!.Your Guess is Right");

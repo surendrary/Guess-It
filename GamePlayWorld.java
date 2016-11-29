@@ -28,6 +28,7 @@ public class GamePlayWorld extends World
     public static Map<String,Boolean> previousQueryResultMap = new HashMap<String,Boolean>();
     GreenfootSound backgroundMusic = new GreenfootSound("background_loop.mp3");
     public static String gameName = "";
+    public static int time_elapsed = 0; 
     
     
     /**
@@ -63,6 +64,7 @@ public class GamePlayWorld extends World
         getBackground().drawImage(game_Name, backgroundImage.getWidth()/2 - 85, 10);
         
         //RUSHIN-----------------------------for name in top left
+        //for name in top left
         getBackground().setFont(new Font("", Font.BOLD, 25));
         getBackground().drawString(this.playerName,5,30);
         getBackground().drawLine(0,35,100,35);
@@ -133,7 +135,7 @@ public class GamePlayWorld extends World
         // durationMillis is in milliseconds, so you
         // can convert to seconds/minutes whatever:
         int durationSecs = msSinceLast / 1000;
-
+        time_elapsed = durationSecs;
       //long msSinceLast = System.currentTimeMillis()-startTime;
       Message time= new Message();
       time.setImage(new GreenfootImage(durationSecs+" seconds", 35,Color.RED, Color.BLACK));

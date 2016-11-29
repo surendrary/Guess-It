@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=GamePlayWorld
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ GamePlayWorld\ here.\r\n\ \r\n\ @author\ Green\ Techies\r\n\ @version\ 1.0\r\n
-comment1.params=playerName\ gameLevel\ gameName
-comment1.target=GamePlayWorld(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.params=playerName\ gameLevel\ gameName\ guessedNumber
+comment1.target=GamePlayWorld(java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GamePlayWorld.\r\n\ \r\n
 comment2.params=
 comment2.target=int\ getnumberguess()

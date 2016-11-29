@@ -22,6 +22,7 @@ public class JoinGameButton extends Actor
      * Constructor for objects of class LessThanButton
      */
     private static String service_url = "https://guessit-webservice.herokuapp.com/rest/guessit/database";
+    //private static String service_url = "http://localhost:8080/TestGuessIt/rest/guessit/database";
     boolean isMultiplayer;
     String playerName = "";
     boolean isHost;
@@ -34,6 +35,7 @@ public class JoinGameButton extends Actor
 
     public void act()
     {
+        int guessedNumber = 80;
       if(Greenfoot.mousePressed(this)){
            Greenfoot.playSound("button_click.mp3");
            String gameName = JOptionPane.showInputDialog("Enter Game ID to join");
@@ -46,8 +48,19 @@ public class JoinGameButton extends Actor
         JSONObject obj = new JSONObject();
         obj.put("playerName",this.playerName);
         obj.put("gameName",gameName);
-		Representation result = guessDatabaseResource.put(obj);
-        Greenfoot.setWorld(new GamePlayWorld(playerName,"easy",gameName));
+        try{
+        Representation result = guessDatabaseResource.put(obj);
+        String res = result.getText();
+            if(res.contains("Not")){
+            }
+            else{
+                guessedNumber = Integer.parseInt(res);
+             }
+        }
+         catch ( Exception e ) {
+            e.printStackTrace(); 
+         }       
+        Greenfoot.setWorld(new GamePlayWorld(playerName,"easy",gameName,guessedNumber));
         }
       }
     }

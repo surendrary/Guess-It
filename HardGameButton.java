@@ -4,6 +4,7 @@ import org.restlet.representation.Representation;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.data.Form;
 import org.json.JSONObject;
+import java.util.Random;
 
 /**
  * Write a description of class HardGameButton here.
@@ -19,6 +20,7 @@ public class HardGameButton extends Actor
     boolean isHost;
     String gameName= "";
     private static String service_url = "https://guessit-webservice.herokuapp.com/rest/guessit/database";
+    //private static String service_url = "http://localhost:8080/TestGuessIt/rest/guessit/database";
     
      /**
      * Constructor for objects of class EasyGameButton.
@@ -39,6 +41,7 @@ public class HardGameButton extends Actor
      */
     public void act() 
     {
+        int guessedNumber = 790;
         if(Greenfoot.mousePressed(this)){
             Greenfoot.playSound("button_click.mp3");
             ClientResource guessDatabaseResource = new ClientResource(service_url);
@@ -50,10 +53,28 @@ public class HardGameButton extends Actor
         else if(this.isMultiplayer){
              obj.put("host",this.playerName);
         }
+        else{
+            Random random = new Random();
+            guessedNumber = random.nextInt(1000)+2;
+        }
         obj.put("level", "Hard");
         obj.put("gameName", this.gameName);
+        
+        try{
         Representation result = guessDatabaseResource.post(obj);
-        Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard",gameName));
+        String res = result.getText();
+            if(res.contains("Error")){
+            }
+            else{
+                guessedNumber = Integer.parseInt(res);
+                }
+
+        } 
+         catch ( Exception e ) {
+            e.printStackTrace(); 
+         }        
+         System.out.println(guessedNumber);
+        Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard",gameName,guessedNumber));
         }
     }    
 }

@@ -4,6 +4,7 @@ import org.restlet.representation.Representation;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.data.Form;
 import org.json.JSONObject;
+import java.util.Random;
 
 /**
  * Write a description of class EasyGameButton here.
@@ -19,8 +20,8 @@ public class EasyGameButton extends Actor
     boolean isMultiplayer;
     boolean isHost;
     String gameName= "";
+    //private static String service_url = "http://localhost:8080/TestGuessIt/rest/guessit/database";
     private static String service_url = "https://guessit-webservice.herokuapp.com/rest/guessit/database";
- 
     /**
      * Constructor for objects of class EasyGameButton.
      * 
@@ -40,6 +41,7 @@ public class EasyGameButton extends Actor
      */
     public void act() 
     {
+        int guessedNumber = 80;
         if(Greenfoot.mousePressed(this)){
             Greenfoot.playSound("button_click.mp3");
             ClientResource guessDatabaseResource = new ClientResource(service_url);
@@ -50,10 +52,27 @@ public class EasyGameButton extends Actor
         else if(this.isMultiplayer){
              obj.put("host",this.playerName);
         }
+        else{
+            Random random = new Random();
+            guessedNumber = random.nextInt(100)+2;
+        }
         obj.put("level", "Easy");
         obj.put("gameName", this.gameName);
+        try{
         Representation result = guessDatabaseResource.post(obj);
-        Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy",getWorldOfType(GameLevelSelection.class).gameName));
+        String res = result.getText();
+            if(res.contains("Error")){
+            }
+            else{
+                guessedNumber = Integer.parseInt(res);
+               }
+        
+        } 
+         catch ( Exception e ) {
+            e.printStackTrace(); 
+         }         
+         
+        Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy",getWorldOfType(GameLevelSelection.class).gameName,guessedNumber));
         }
     }   
 }

@@ -26,10 +26,11 @@ public class GameEngine extends Actor
     /**
      * Constructor for objects of class GameEngine
      */
-    public GameEngine(String playerName, String gameLevel)
+    public GameEngine(String playerName, String gameLevel, int computerGuess)
     {
       this.playerName = playerName;
       this.gameLevel =gameLevel;
+      this.computerGuess = computerGuess;
       Random random = new Random();
       //if(gameLevel.equals("hard")){
       //computerGuess = random.nextInt(1000)+2;
@@ -37,19 +38,7 @@ public class GameEngine extends Actor
       //else{
         //computerGuess = random.nextInt(100)+2;
       //}
-      try {
-          
-           ClientResource resource = new ClientResource("http://guessit-webservice.herokuapp.com/rest/guessit");
-           Representation repr = resource.get();
-            JsonRepresentation jsonRepresentation = new JsonRepresentation(repr); 
-            JSONObject jsonObj = jsonRepresentation.getJsonObject();
-            String guess = jsonObj.get("guessedNumber").toString();
-            computerGuess=Integer.parseInt(guess); 
-         } 
-         catch ( Exception e ) {
-            e.printStackTrace(); 
-         }
-      getWorldOfType(GamePlayWorld.class).computerGuess = computerGuess; 
+     
     }
 
     /**

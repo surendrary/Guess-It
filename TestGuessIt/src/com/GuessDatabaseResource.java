@@ -2,6 +2,7 @@ package com;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.UUID;
 
 import javax.ws.rs.Consumes;
@@ -73,6 +74,12 @@ public class GuessDatabaseResource {
 
 		DBObject foundGame = findGame(gameName);
 		if (foundGame == null) {
+			int computerGuess =70;
+			if(gameLevel.equalsIgnoreCase("easy"))
+			 computerGuess = new Random().nextInt(100) + 2;
+			else
+				computerGuess = new Random().nextInt(1000) + 2;
+			
 			BasicDBObjectBuilder docBuilder = BasicDBObjectBuilder.start();
 			BasicDBList asList1 = new BasicDBList();
 			BasicDBList asList2 = new BasicDBList();
@@ -80,12 +87,13 @@ public class GuessDatabaseResource {
 			docBuilder.append("host", host);
 			docBuilder.append("level", gameLevel);
 			docBuilder.append("gameName", gameName);
+			docBuilder.append("computerGuess", computerGuess);
 			docBuilder.append("players", asList1);
 			docBuilder.append("score", asList2);
 			DBObject gameObject = docBuilder.get();
 			gameCollection.insert(gameObject);
 			mongoClient.close();
-			return "Game Hosted";
+			return String.valueOf(computerGuess);
 		}
 		return "Error! Game already Exists";
 	}
@@ -115,7 +123,7 @@ public class GuessDatabaseResource {
 
 			mongoClient.close();
 		}
-		return "Joined";
+		return foundGame.get("computerGuess").toString();
 	}
 
 	private DBObject findGame(String gameName) throws JSONException {

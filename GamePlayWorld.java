@@ -29,18 +29,20 @@ public class GamePlayWorld extends World
     GreenfootSound backgroundMusic = new GreenfootSound("background_loop.mp3");
     public static String gameName = "";
     public static int time_elapsed = 0; 
+
     
     
     /**
      * Constructor for objects of class GamePlayWorld.
      * 
      */
-    public GamePlayWorld(String playerName,String gameLevel, String gameName)
+    public GamePlayWorld(String playerName,String gameLevel, String gameName, int guessedNumber)
     {    
        super(850, 650, 1);
        this.playerName = playerName; 
        this.gameLevel = gameLevel;
        this.gameName = gameName;
+       this.computerGuess = guessedNumber;
        setUpGame();
     }
     
@@ -112,7 +114,7 @@ public class GamePlayWorld extends World
         //Add Text Area to track previous queries
         addObject(queryResultBox, getWidth()-200, getHeight()-300);
         
-        gameEngine = new GameEngine(this.playerName,this.gameLevel);
+        gameEngine = new GameEngine(this.playerName,this.gameLevel, this.computerGuess);
         
         //update number to zero on load
         this.numberOfGuess = 0;

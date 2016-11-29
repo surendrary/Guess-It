@@ -13,7 +13,8 @@ import org.json.JSONObject;
  */
 public class GuessButton extends Actor
 {
-    private static String service_url = "http://localhost:8080/TestGuessIt/rest/guessit/score";
+    //private static String service_url = "http://localhost:8080/TestGuessIt/rest/guessit/score";
+        private static String service_url = "https://guessit-webservice.herokuapp.com/rest/guessit/score";
     /**
      * Constructor for objects of class LessThanButton
      */
@@ -36,6 +37,8 @@ public class GuessButton extends Actor
           GameEngine gameEngine = getWorldOfType(GamePlayWorld.class).gameEngine;
           gameEngine.enterendInput = getWorldOfType(GamePlayWorld.class).enteredNumber;
           gameEngine.computerGuess = getWorldOfType(GamePlayWorld.class).computerGuess;
+          
+          System.out.println("gameEngine.computerGuess"+gameEngine.computerGuess+"gameEngine.enterendInput"+gameEngine.enterendInput);
           int numberOfGuess = getWorldOfType(GamePlayWorld.class).numberOfGuess;
           String playerName = getWorldOfType(GamePlayWorld.class).playerName;
           String gameName = getWorldOfType(GamePlayWorld.class).gameName;
@@ -63,7 +66,7 @@ public class GuessButton extends Actor
             
             Representation result = guessDatabaseResource.post(obj);
             
-            Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard",gameName));
+            Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard",gameName,2));
             
             
           }

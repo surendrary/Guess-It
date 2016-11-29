@@ -15,8 +15,8 @@ public class GamePlayWorld extends World
 {
     public long startTime = System.currentTimeMillis();
 
-    String playerName = "";
-    String gameLevel = "";
+    public static String playerName = "";
+    public static String gameLevel = "";
     public static String operator = ""; // select operators i.e. >,<,/
     public static int enteredNumber = 0;
     public static int computerGuess;
@@ -27,7 +27,7 @@ public class GamePlayWorld extends World
     public static QueryResultBox queryResultBox = new QueryResultBox();
     public static Map<String,Boolean> previousQueryResultMap = new HashMap<String,Boolean>();
     GreenfootSound backgroundMusic = new GreenfootSound("background_loop.mp3");
-    
+    public static String gameName = "";
     
     
     /**

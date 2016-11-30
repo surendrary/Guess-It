@@ -1,5 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import javax.swing.JOptionPane;
+import java.util.Iterator;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Write a description of class BackButton here.
  * 
@@ -38,6 +42,21 @@ public class CloseButton extends Actor
               {
                 getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
                 }
+              
+              //clearing the hashmap
+                //for(Map.Entry<String,Boolean> entrySet :getWorldOfType(GamePlayWorld.class).previousQueryResultMap.entrySet())
+                QueryResultBox resultBox = getWorldOfType(GamePlayWorld.class).getObjects(QueryResultBox.class).get(0);
+                StringBuilder queryTest = new StringBuilder(); 
+                for(Iterator<Map.Entry<String,Boolean>> it =getWorldOfType(GamePlayWorld.class).previousQueryResultMap.entrySet().iterator();it.hasNext();)
+                 {
+                     Map.Entry<String,Boolean> entry = it.next();
+                     it.remove();
+                     System.out.println("a key removed");
+                    }
+                 resultBox.updateImage(queryTest.toString());
+                  
+                
+                
               GuessItWorld gameWorld=new GuessItWorld();
               gameWorld.started();
               Greenfoot.setWorld(gameWorld);

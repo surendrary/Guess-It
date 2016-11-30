@@ -58,6 +58,9 @@ public class GamePlayWorld extends World
      */
     private void setUpGame()
     {
+        //update number to zero on load
+        this.numberOfGuess = 0;
+        
         // starting time recorded
         long startTime = System.currentTimeMillis();
         if(gameLevel.equalsIgnoreCase("hard"))
@@ -116,8 +119,7 @@ public class GamePlayWorld extends World
         
         gameEngine = new GameEngine(this.playerName,this.gameLevel, this.computerGuess);
         
-        //update number to zero on load
-        this.numberOfGuess = 0;
+        
         //rushin
         BackButton bb = new BackButton();
         addObject(bb,35,backgroundImage.getHeight()+275);

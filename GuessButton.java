@@ -5,6 +5,11 @@ import org.restlet.representation.Representation;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.data.Form;
 import org.json.JSONObject;
+import java.util.Iterator;
+import java.util.HashMap;
+import java.util.Map;
+
+
 /**
  * Write a description of class GuessButton here.
  * 
@@ -32,6 +37,23 @@ public class GuessButton extends Actor
           if(getWorldOfType(GamePlayWorld.class).backgroundMusic!=null){
              getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
          }
+         
+         //clearing the hashmap
+                //for(Map.Entry<String,Boolean> entrySet :getWorldOfType(GamePlayWorld.class).previousQueryResultMap.entrySet())
+                QueryResultBox resultBox = getWorldOfType(GamePlayWorld.class).getObjects(QueryResultBox.class).get(0);
+                StringBuilder queryTest = new StringBuilder(); 
+                for(Iterator<Map.Entry<String,Boolean>> it =getWorldOfType(GamePlayWorld.class).previousQueryResultMap.entrySet().iterator();it.hasNext();)
+                 {
+                     Map.Entry<String,Boolean> entry = it.next();
+                     it.remove();
+                     System.out.println("a key removed");
+                    }
+                 resultBox.updateImage(queryTest.toString());
+                
+         
+         
+         
+         
           Greenfoot.playSound("button_click.mp3");
           getWorldOfType(GamePlayWorld.class).operator="guess";
           GameEngine gameEngine = getWorldOfType(GamePlayWorld.class).gameEngine;

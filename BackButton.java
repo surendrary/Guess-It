@@ -1,5 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import javax.swing.JOptionPane;
+import java.util.Iterator;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Write a description of class BackButton here.
  * 
@@ -51,9 +55,38 @@ public class BackButton extends Actor
                 getWorldOfType(GamePlayWorld.class).backgroundMusic.stop();
                 }
                 
+                //clearing the hashmap
+                //for(Map.Entry<String,Boolean> entrySet :getWorldOfType(GamePlayWorld.class).previousQueryResultMap.entrySet())
+                QueryResultBox resultBox = getWorldOfType(GamePlayWorld.class).getObjects(QueryResultBox.class).get(0);
+                StringBuilder queryTest = new StringBuilder(); 
+                for(Iterator<Map.Entry<String,Boolean>> it =getWorldOfType(GamePlayWorld.class).previousQueryResultMap.entrySet().iterator();it.hasNext();)
+                 {
+                     Map.Entry<String,Boolean> entry = it.next();
+                     it.remove();
+                     System.out.println("a key removed");
+                    }
+                 resultBox.updateImage(queryTest.toString());
+                 
+                 /*sample
+                 Map<String, String> map = new HashMap<String, String>() {
+      {
+        put("test", "test123");
+        put("test2", "test456");
+      }
+    };
+
+    for(Iterator<Map.Entry<String, String>> it = map.entrySet().iterator(); it.hasNext(); ) {
+      Map.Entry<String, String> entry = it.next();
+      if(entry.getKey().equals("test")) {
+        it.remove();
+      }
+    }
+                */
                 String name = getWorldOfType(GamePlayWorld.class).playerName;
                 System.out.print(name);
                 Greenfoot.setWorld(new GameTypeSelect(name));
+                
+                
                 
             }
         }

@@ -3,6 +3,7 @@ import java.awt.Color;
 import javax.swing.*;
 import java.awt.Font;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -25,7 +26,7 @@ public class GamePlayWorld extends World
     public static GameEngine gameEngine= null;
     public static int numberOfGuess = 0;
     public static QueryResultBox queryResultBox = new QueryResultBox();
-    public static Map<String,Boolean> previousQueryResultMap = new HashMap<String,Boolean>();
+    public static Map<String,Boolean> previousQueryResultMap = new LinkedHashMap<String,Boolean>();
     GreenfootSound backgroundMusic = new GreenfootSound("background_loop.mp3");
     public static String gameName = "";
     public static int time_elapsed = 0; 

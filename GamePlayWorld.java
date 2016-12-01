@@ -3,7 +3,6 @@ import java.awt.Color;
 import javax.swing.*;
 import java.awt.Font;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -26,7 +25,7 @@ public class GamePlayWorld extends World
     public static GameEngine gameEngine= null;
     public static int numberOfGuess = 0;
     public static QueryResultBox queryResultBox = new QueryResultBox();
-    public static Map<String,Boolean> previousQueryResultMap = new LinkedHashMap<String,Boolean>();
+    public static Map<String,Boolean> previousQueryResultMap = new HashMap<String,Boolean>();
     GreenfootSound backgroundMusic = new GreenfootSound("background_loop.mp3");
     public static String gameName = "";
     public static int time_elapsed = 0; 
@@ -59,9 +58,6 @@ public class GamePlayWorld extends World
      */
     private void setUpGame()
     {
-        //update number to zero on load
-        this.numberOfGuess = 0;
-        
         // starting time recorded
         long startTime = System.currentTimeMillis();
         if(gameLevel.equalsIgnoreCase("hard"))
@@ -120,12 +116,13 @@ public class GamePlayWorld extends World
         
         gameEngine = new GameEngine(this.playerName,this.gameLevel, this.computerGuess);
         
-        
+        //update number to zero on load
+        this.numberOfGuess = 0;
         //rushin
         BackButton bb = new BackButton();
         addObject(bb,35,backgroundImage.getHeight()+275);
         
-        ViewScoresButton vs=new ViewScoresButton();
+        ViewScoresButton vs=new ViewScoresButton(this.gameName);
         addObject(vs,(backgroundImage.getWidth()/2-65),backgroundImage.getHeight()+230);
     }
     

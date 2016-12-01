@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=GameEngineClient
-comment0.text=\n\ Creates\ and\ launches\ a\ HTTP\ client\ invoking\ the\ server\ listening\ on\ port\n\ 8080,\ and\ writing\ the\ response\ entity\ on\ the\ console.\n
+comment0.text=\r\n\ Creates\ and\ launches\ a\ HTTP\ client\ invoking\ the\ server\ listening\ on\ port\r\n\ 8080,\ and\ writing\ the\ response\ entity\ on\ the\ console.\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 numComments=2

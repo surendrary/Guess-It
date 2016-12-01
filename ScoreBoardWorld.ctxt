@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=ScoreBoardWorld
-comment0.text=\n\ ScoreBoardWorld\ is\ the\ greenfoot\ world\ where\ the\ final\ scoreboard\ is\ displayed.\n\ \n\ @Green\ Techies\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ ScoreBoardWorld\ is\ the\ greenfoot\ world\ where\ the\ final\ scoreboard\ is\ displayed.\r\n\ \r\n\ @Green\ Techies\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=service_url
 comment1.target=ScoreBoardWorld(java.lang.String)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ ScoreBoardWorld.\n\ \n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ScoreBoardWorld.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ prepare()
-comment2.text=\n\ Prepares\ the\ world.\n
+comment2.text=\r\n\ Prepares\ the\ world.\r\n
 numComments=3

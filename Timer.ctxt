@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Timer
-comment0.text=\n\ This\ is\ class\ is\ used\ to\ display\ time\ on\ game\ play\ world.Timer\ will\ be\ stoped\ when\ user\ clicks\ on\ 'Guess'\ button.(For\ Easy\ Mode)\n\ It\ is\ under\ construction\n\ \n\ @author\ Green\ Techies\ \n\ @version\ 1.0\n
+comment0.text=\r\n\ This\ is\ class\ is\ used\ to\ display\ time\ on\ game\ play\ world.Timer\ will\ be\ stoped\ when\ user\ clicks\ on\ 'Guess'\ button.(For\ Easy\ Mode)\r\n\ It\ is\ under\ construction\r\n\ \r\n\ @author\ Green\ Techies\ \r\n\ @version\ 1.0\r\n
 comment1.params=timeBeforeEvent\ getsStarted
 comment1.target=Timer(int,\ boolean)
 comment2.params=timeBeforeEvent
@@ -9,7 +9,7 @@ comment3.params=
 comment3.target=void\ updateImage()
 comment4.params=
 comment4.target=void\ act()
-comment4.text=\n\ Act\ -\ do\ whatever\ the\ Timer\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ Timer\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment5.params=
 comment5.target=int\ getTime()
 comment6.params=

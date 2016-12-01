@@ -1,38 +1,44 @@
 package com;
 
-import java.util.UUID;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement 
+@XmlRootElement
 public class Score {
-	private String playerName;
-	private int turns;
+	private String name;
+	private int moves;
 	private int time;
-	
+
 	public String getGameName() {
 		return gameName;
 	}
-	public String getPlayerName() {
-		return playerName;
+
+	public String getName() {
+		return name;
 	}
-	public void setPlayerName(String playerName) {
-		this.playerName = playerName;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public int getTurns() {
-		return turns;
+
+	public int getMoves() {
+		return moves;
 	}
-	public void setTurns(int turns) {
-		this.turns = turns;
+
+	public void setMoves(int moves) {
+		this.moves = moves;
 	}
+
 	public int getTime() {
 		return time;
 	}
+
 	public void setTime(int time) {
 		this.time = time;
 	}
+
 	public void setGameName(String gameName) {
 		this.gameName = gameName;
 	}
+
 	private String gameName;
 }

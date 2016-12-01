@@ -16,11 +16,7 @@ import javax.ws.rs.core.Response;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.restlet.data.Form;
-import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
-import org.restlet.resource.Post;
-import org.restlet.resource.Put;
 
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
@@ -74,12 +70,12 @@ public class GuessDatabaseResource {
 
 		DBObject foundGame = findGame(gameName);
 		if (foundGame == null) {
-			int computerGuess =70;
-			if(gameLevel.equalsIgnoreCase("easy"))
-			 computerGuess = new Random().nextInt(100) + 2;
+			int computerGuess = 70;
+			if (gameLevel.equalsIgnoreCase("easy"))
+				computerGuess = new Random().nextInt(100) + 2;
 			else
 				computerGuess = new Random().nextInt(1000) + 2;
-			
+
 			BasicDBObjectBuilder docBuilder = BasicDBObjectBuilder.start();
 			BasicDBList asList1 = new BasicDBList();
 			BasicDBList asList2 = new BasicDBList();

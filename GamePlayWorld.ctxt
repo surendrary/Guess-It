@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=GamePlayWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ GamePlayWorld\ here.\r\n\ \r\n\ @author\ Green\ Techies\r\n\ @version\ 1.0\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ GamePlayWorld\ here.\n\ \n\ @author\ Green\ Techies\n\ @version\ 1.0\n
 comment1.params=playerName\ gameLevel\ gameName\ guessedNumber
 comment1.target=GamePlayWorld(java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GamePlayWorld.\r\n\ \r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ GamePlayWorld.\n\ \n
 comment2.params=
 comment2.target=int\ getnumberguess()
 comment3.params=
 comment3.target=void\ setUpGame()
-comment3.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\r\n\ objects\ and\ add\ them\ to\ the\ world.\r\n
+comment3.text=\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\n\ objects\ and\ add\ them\ to\ the\ world.\n
 comment4.params=
 comment4.target=void\ UpdateGuess()
 comment5.params=

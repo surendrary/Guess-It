@@ -58,7 +58,7 @@ public class JoinGameButton extends Actor
              }
         }
          catch ( Exception e ) {
-            e.printStackTrace(); 
+             guessedNumber=80;
          }       
         Greenfoot.setWorld(new GamePlayWorld(playerName,"easy",gameName,guessedNumber));
         }

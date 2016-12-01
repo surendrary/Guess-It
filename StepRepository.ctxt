@@ -6,5 +6,5 @@ comment2.params=s
 comment2.target=void\ addStep(java.lang.String)
 comment3.params=
 comment3.target=StepRepository()
-comment3.text=\r\n\ Constructor\ for\ objects\ of\ class\ StepRepository\r\n
+comment3.text=\n\ Constructor\ for\ objects\ of\ class\ StepRepository\n
 numComments=4

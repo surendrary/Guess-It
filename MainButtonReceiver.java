@@ -18,6 +18,7 @@ public class MainButtonReceiver  implements Receiver
         else{
             Greenfoot.setWorld(new GameTypeSelect(userName));
             }
-        
+         
     }
 }
+     

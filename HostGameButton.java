@@ -11,7 +11,7 @@ public class HostGameButton extends Actor
 {
     String username ="";
     String gameName ="";
-    
+    private ConcreteCommand command; 
       public HostGameButton(String playerName,boolean isMultiplayer, boolean isHost)
     {
         GreenfootImage image = new GreenfootImage("host game.png");
@@ -26,14 +26,14 @@ public class HostGameButton extends Actor
     public void act()
     {
       if(Greenfoot.mousePressed(this)){
-          String gameName = JOptionPane.showInputDialog("Enter Game ID to host");
-           if(gameName.equals("")){
-               JOptionPane.showMessageDialog(null, "Game id is mandatory to host a multiplayer game");
-            }
-           else{ 
-               Greenfoot.setWorld(new GameLevelSelection(username,true,true,gameName)); 
-           
-        }
+          command = new ConcreteCommand();
+            command.setReceiver(new HostButtonReceiver(username));
+            
+            InvokerImpl in = new InvokerImpl();
+            in.setCommand(command);
+            
+            in.invoke(); 
+          
       }
     }
     }

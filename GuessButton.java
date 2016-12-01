@@ -49,10 +49,7 @@ public class GuessButton extends Actor
                      System.out.println("a key removed");
                     }
                  resultBox.updateImage(queryTest.toString());
-                
-         
-         
-         
+               
          
           Greenfoot.playSound("button_click.mp3");
           getWorldOfType(GamePlayWorld.class).operator="guess";
@@ -65,6 +62,7 @@ public class GuessButton extends Actor
           String playerName = getWorldOfType(GamePlayWorld.class).playerName;
           String gameName = getWorldOfType(GamePlayWorld.class).gameName;
           int time = getWorldOfType(GamePlayWorld.class).time_elapsed;
+        
           if(gameEngine.enterendInput <1 )
             JOptionPane.showMessageDialog(null, "Please Enter a number to guess");
           else if(gameEngine.enterendInput==gameEngine.computerGuess){
@@ -81,14 +79,20 @@ public class GuessButton extends Actor
             JSONObject obj = new JSONObject();
             Form form = new Form();
             
-            obj.put("playerName", playerName);
+            obj.put("name", playerName);
             obj.put("gameName", gameName);
-            obj.put("turns", numberOfGuess);
+            obj.put("moves", numberOfGuess+1);
             obj.put("time", getWorldOfType(GamePlayWorld.class).time_elapsed);
+            try
+            {
+                    Representation result = guessDatabaseResource.post(obj); 
+            }
+            catch(Exception e)
+            {
             
-            Representation result = guessDatabaseResource.post(obj);
+            }
+             //Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard",gameName,2));
             
-            Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard",gameName,2));
             
             
           }

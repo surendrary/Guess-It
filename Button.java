@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 public class Button extends Actor
 {
     
-    int dy=0;
+    int dy=20;
     float g=1.0f;  
     private ConcreteCommand command;
     public Button()
@@ -24,22 +24,22 @@ public class Button extends Actor
         if(Greenfoot.mousePressed(this)){
             command = new ConcreteCommand();
             command.setReceiver(new MainButtonReceiver());
-            
             InvokerImpl in = new InvokerImpl();
             in.setCommand(command);
             
             in.invoke();       
         }
+        
         if(stopfall()==true)
         {
-           setLocation(getX()+dy,getY());
-           dy=dy+(int)g; 
+           setLocation(getX(),getY()-dy);
+           dy=dy-(int)g; 
         }  
     }
     
     public boolean stopfall()
     {
-        if(getX()>400)    
+        if(getY()<550)    
         {
          return false;
         }
@@ -48,4 +48,4 @@ public class Button extends Actor
          return true;
         }
     }
-}
+} 

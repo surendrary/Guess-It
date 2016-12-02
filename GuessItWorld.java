@@ -70,7 +70,7 @@ public class GuessItWorld extends World
         addObject(gametitle,307 ,0);
         //Greenfoot.delay(10);
         Button playButton = new Button();
-        addObject(playButton,0 ,550); 
+        addObject(playButton,400,1000); 
         
         GameDiagram gameDiagram = new GameDiagram();
         addObject(gameDiagram,410,0); 

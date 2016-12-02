@@ -67,9 +67,10 @@ public class ScoreBoardWorld extends World
 		int x = 50;
 		int y =200;
 
+		int count = 1;
 		 for (Score sc : list) {
 			getBackground().setFont(new Font("", Font.BOLD, 25));
-			getBackground().drawString("Name: "+ sc.getName()+" || Moves: "+sc.getMoves()+ " || Time: " +sc.getTime(),x,y);
+			getBackground().drawString(count++ + ". Name: " + sc.getName()+" || Moves: "+sc.getMoves()+ " || Time: " +sc.getTime(),x,y);
 			y = y +50;
 		   }  
 		

@@ -54,7 +54,8 @@ public class QueryButton extends Actor
             sampleMessage.setText(" No, Continue Guessing!!");
             getWorld().addObject(sampleMessage, 300, 300);
             Greenfoot.delay(50);
-            getWorld().removeObject(sampleMessage);
+            List<Message> messageActors = getWorld().getObjects(Message.class);
+            getWorld().removeObjects(messageActors);
             getWorldOfType(GamePlayWorld.class).UpdateGuess(); 
             } 
            else{
@@ -62,7 +63,8 @@ public class QueryButton extends Actor
                 sampleMessage.setText("You lost!! Out of turns");
                 getWorld().addObject(sampleMessage, 300, 300);
                 Greenfoot.delay(100);
-                getWorld().removeObject(sampleMessage);
+                List<Message> messageActors = getWorld().getObjects(Message.class);
+                getWorld().removeObjects(messageActors);
                 Greenfoot.setWorld(new GameOver()); 
                
                }

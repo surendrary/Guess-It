@@ -8,9 +8,6 @@ import java.awt.Font;
  * @Green Techies
  * @version (a version number or a date)
  */
-
-
-// @rushin
 public class GameTypeSelect extends World
 {
     public static String gametype="single";
@@ -26,7 +23,6 @@ public class GameTypeSelect extends World
         super(850, 650, 1);
         this.playerName = playerName; 
         prepare();
-       // setupGameTypeSelect();
     }
     
     private void prepare()
@@ -51,7 +47,6 @@ public class GameTypeSelect extends World
         CloseButton closebutton = new CloseButton();
         addObject(closebutton,getWidth()/2+410,(getHeight()-640));
         
-        //rushin
         BackButton bb = new BackButton();
         addObject(bb,35,backgroundImage.getHeight()+275);
     }

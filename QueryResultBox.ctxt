@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=QueryResultBox
-comment0.text=\n\ QueryResultBox\ is\ the\ texbox\ where\ the\ result\ of\ guesses\ made\ by\ users\ are\ displayed.\n\ \n\ @author\ Green\ Techies\n\ @version\ 1.0\n
+comment0.text=\r\n\ QueryResultBox\ is\ the\ texbox\ where\ the\ result\ of\ guesses\ made\ by\ users\ are\ displayed.\r\n\ \r\n\ @author\ Green\ Techies\r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=QueryResultBox()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ QueryResultBox\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ QueryResultBox\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=text
 comment2.target=void\ updateImage(java.lang.String)
 comment3.params=

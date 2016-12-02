@@ -20,7 +20,6 @@ public class HardGameButton extends Actor
     boolean isHost;
     String gameName= "";
     private static String service_url = "https://guessit-webservice.herokuapp.com/rest/guessit/database";
-    //private static String service_url = "http://localhost:8080/TestGuessIt/rest/guessit/database";
     
      /**
      * Constructor for objects of class EasyGameButton.
@@ -29,7 +28,6 @@ public class HardGameButton extends Actor
     public HardGameButton(String playerName,String gameName,boolean isMultiplayer, boolean isHost)
     {    
        this.playerName = playerName; 
-       System.out.println(this.playerName+" Hard Game button");
        this.gameName = gameName;
        this.isMultiplayer = isMultiplayer;
        this.isHost = isHost;
@@ -73,7 +71,6 @@ public class HardGameButton extends Actor
          catch ( Exception e ) {
             e.printStackTrace(); 
          }        
-         System.out.println(guessedNumber);
         Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"hard",gameName,guessedNumber));
         }
     }    

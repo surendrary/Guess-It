@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=GameEngineResource
-comment0.text=\n\ Resource\ which\ has\ only\ one\ representation.\n
+comment0.text=\r\n\ Resource\ which\ has\ only\ one\ representation.\r\n
 comment1.params=
 comment1.target=javax.ws.rs.core.Response\ guessNumber()
 numComments=2

@@ -71,7 +71,6 @@ public class EasyGameButton extends Actor
          catch ( Exception e ) {
             e.printStackTrace(); 
          }         
-        System.out.println("PLayerNAmeeasy="+this.playerName+"gamenameeasy="+this.gameName+"Multiplayereasy="+this.isMultiplayer+"hosteasy="+this.isMultiplayer);      
         Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy",getWorldOfType(GameLevelSelection.class).gameName,guessedNumber)); 
         }
     }   

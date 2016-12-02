@@ -42,10 +42,8 @@ public class GameLevelSelection extends World
         GreenfootImage game_Name = new GreenfootImage("difficulty_level.png");
         getBackground().drawImage(game_Name, backgroundImage.getWidth()/2 -160, 20);
        
-        getBackground().setFont(new Font("", Font.BOLD, 25));
+        getBackground().setFont(new Font("", Font.BOLD | Font.ITALIC, 25));
         getBackground().drawString(this.playerName,5,30);
-        getBackground().drawLine(0,35,100,35);
-        getBackground().drawLine(100,0,100,35);
         
         Greenfoot.setSpeed(50);
         CloseButton closebutton = new CloseButton();

@@ -63,8 +63,7 @@ public class BackButton extends Actor
                  {
                      Map.Entry<String,Boolean> entry = it.next();
                      it.remove();
-                     System.out.println("a key removed");
-                    }
+                     }
                  resultBox.updateImage(queryTest.toString());
                  
                  /*sample

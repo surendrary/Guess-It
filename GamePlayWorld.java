@@ -59,6 +59,7 @@ public class GamePlayWorld extends World
      */
     private void setUpGame()
     {
+        this.numberOfGuess = 0;
         // starting time recorded
         long startTime = System.currentTimeMillis();
         if(gameLevel.equalsIgnoreCase("hard"))
@@ -70,10 +71,8 @@ public class GamePlayWorld extends World
         
         //RUSHIN-----------------------------for name in top left
         //for name in top left
-        getBackground().setFont(new Font("", Font.BOLD, 25));
-        getBackground().drawString(this.playerName,5,30);
-        getBackground().drawLine(0,35,100,35);
-        getBackground().drawLine(100,0,100,35);
+        getBackground().setFont(new Font("", Font.BOLD | Font.ITALIC, 25));
+        getBackground().drawString(this.playerName,5,30);;
         
         Message Score = new Message();
         Score.setImage(new GreenfootImage("Guess: " + numberOfGuess, 34, Color.RED, Color.BLACK));
@@ -90,7 +89,7 @@ public class GamePlayWorld extends World
         Mod mod = new Mod();
         addObject(mod,400,200);
         
-       CloseButton closebutton = new CloseButton();
+        CloseButton closebutton = new CloseButton();
         addObject(closebutton,getWidth()/2+410,(getHeight()-640));
         
         label = new LabelBox();

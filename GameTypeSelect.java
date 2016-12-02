@@ -33,10 +33,9 @@ public class GameTypeSelect extends World
         getBackground().drawImage(game_Name, backgroundImage.getWidth()/2 - 20, 10);
         Greenfoot.setSpeed(50);
         
-        getBackground().setFont(new Font("", Font.BOLD, 25));
+        getBackground().setFont(new Font("", Font.BOLD | Font.ITALIC, 25));
         getBackground().drawString(this.playerName,5,30);
-        getBackground().drawLine(0,35,100,35);
-        getBackground().drawLine(100,0,100,35);
+        
         
         SinglePlayer singleplayerbutton = new SinglePlayer();
         addObject(singleplayerbutton,(backgroundImage.getWidth()/2)-100,backgroundImage.getHeight()+200);

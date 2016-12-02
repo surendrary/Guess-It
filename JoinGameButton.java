@@ -39,8 +39,11 @@ public class JoinGameButton extends Actor
       if(Greenfoot.mousePressed(this)){
            Greenfoot.playSound("button_click.mp3");
            String gameName = JOptionPane.showInputDialog("Enter Game ID to join");
-           if(gameName.equals("")){
-               JOptionPane.showMessageDialog(null, "Game id is mandatory to join a multiplayer game");
+           if(gameName==null){
+               //JOptionPane.showMessageDialog(null, "Game id is mandatory to host a multiplayer game");
+            }
+           else if (gameName!=null && gameName.equals("")){
+               JOptionPane.showMessageDialog(null, "Game id is mandatory to join a game");   
             }
         else{    
         Greenfoot.playSound("button_click.mp3");

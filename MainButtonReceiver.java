@@ -12,8 +12,11 @@ public class MainButtonReceiver  implements Receiver
     public void doAction(){
         Greenfoot.playSound("button_click.mp3");
            String userName = JOptionPane.showInputDialog("Enter Name");
-           if(userName==null || userName.equals("")){
-               JOptionPane.showMessageDialog(null, "Username is mandatory to start game");
+           if(userName==null){
+               
+            }
+            else if (userName!=null && userName.equals("")){
+               JOptionPane.showMessageDialog(null, "Username is mandatory to start game"); 
             }
         else{
             Greenfoot.setWorld(new GameTypeSelect(userName));

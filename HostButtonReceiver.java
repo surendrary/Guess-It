@@ -15,8 +15,11 @@ public class HostButtonReceiver implements Receiver
     }
     public void doAction(){
         String gameName = JOptionPane.showInputDialog("Enter Game ID to host");
-           if(gameName==null || gameName.equals("")){
-               JOptionPane.showMessageDialog(null, "Game id is mandatory to host a multiplayer game");
+           if(gameName==null ){
+               
+            }
+           else if (gameName!=null && gameName.equals("")){
+               JOptionPane.showMessageDialog(null, "Game id is mandatory to host a multiplayer game");   
             }
            else if (gameName!=null && gameName.length()>0){
                Greenfoot.setWorld(new GameLevelSelection(username,true,true,gameName));   

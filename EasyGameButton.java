@@ -76,6 +76,5 @@ public class EasyGameButton extends Actor
             e.printStackTrace(); 
          }         
         
-        }
-    }   
-}
+        }}
+    }

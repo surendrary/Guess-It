@@ -51,7 +51,6 @@ public class GameLevelSelection extends World
         CloseButton closebutton = new CloseButton();
         addObject(closebutton,getWidth()/2+410,(getHeight()-640));
         
-        System.out.println("PLayerNAme="+this.playerName+"gamename="+this.gameName+"Multiplayer="+this.isMultiplayer+"host="+this.isMultiplayer);     
         EasyGameButton easygame=new EasyGameButton(this.playerName,this.gameName,this.isMultiplayer,this.isHost);
         addObject(easygame,backgroundImage.getWidth()/2+100,250);
         HardGameButton hardhame=new HardGameButton(this.playerName,this.gameName,this.isMultiplayer,this.isHost);

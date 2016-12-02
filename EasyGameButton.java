@@ -5,6 +5,7 @@ import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.data.Form;
 import org.json.JSONObject;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  * Write a description of class EasyGameButton here.
@@ -62,16 +63,19 @@ public class EasyGameButton extends Actor
         Representation result = guessDatabaseResource.post(obj);
         String res = result.getText();
             if(res.contains("Error")){
+                JOptionPane.showMessageDialog(null, "Game Id already exists, Enter new id");
+                Greenfoot.setWorld(new MultiplayerHome(this.playerName));
             }
             else{
                 guessedNumber = Integer.parseInt(res);
+                Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy",getWorldOfType(GameLevelSelection.class).gameName,guessedNumber)); 
                }
         
         } 
          catch ( Exception e ) {
             e.printStackTrace(); 
          }         
-        Greenfoot.setWorld(new GamePlayWorld(getWorldOfType(GameLevelSelection.class).playerName,"easy",getWorldOfType(GameLevelSelection.class).gameName,guessedNumber)); 
+        
         }
     }   
 }

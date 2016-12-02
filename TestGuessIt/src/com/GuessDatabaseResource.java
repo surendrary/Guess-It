@@ -91,6 +91,7 @@ public class GuessDatabaseResource {
 			mongoClient.close();
 			return String.valueOf(computerGuess);
 		}
+		else
 		return "Error! Game already Exists";
 	}
 

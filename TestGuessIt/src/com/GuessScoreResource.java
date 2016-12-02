@@ -2,6 +2,7 @@ package com;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -85,6 +86,17 @@ public class GuessScoreResource {
 			JSONObject gameJSON = new JSONObject(JSON.serialize(foundGame));
 			list = mapper.readValue(gameJSON.get("score").toString(),
 					TypeFactory.defaultInstance().constructCollectionType(List.class, Score.class));
+			list.sort(new Comparator<Score>() {
+				@Override
+				public int compare(Score o1, Score o2) {
+					// TODO Auto-generated method stub
+					if(o1.getMoves()< o2.getMoves())
+						return -1;
+					else if(o1.getMoves() == o2.getMoves())
+						return o1.getTime()<o2.getTime() ? -1 :1;
+					else return 0;
+				}
+			});
 		}
 		JSONArray scoreArray = new JSONArray();
 		for (Score sc : list) {

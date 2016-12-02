@@ -19,7 +19,6 @@ public class HostButtonReceiver implements Receiver
                JOptionPane.showMessageDialog(null, "Game id is mandatory to host a multiplayer game");
             }
            else{
-               System.out.println("Newly Added Text "+username);
                Greenfoot.setWorld(new GameLevelSelection(username,true,true,gameName));   
         }
     }

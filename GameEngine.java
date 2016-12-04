@@ -20,7 +20,6 @@ public class GameEngine extends Actor
     public static String chosedOperation = null;
     public String playerName = "";
     public String gameLevel="";
-    private final String service_url = "http://localhost:8080/restlet/guessit";
     public static int maxTurns = 20;
 
     /**
@@ -32,13 +31,6 @@ public class GameEngine extends Actor
       this.gameLevel =gameLevel;
       this.computerGuess = computerGuess;
       Random random = new Random();
-      //if(gameLevel.equals("hard")){
-      //computerGuess = random.nextInt(1000)+2;
-      //}
-      //else{
-        //computerGuess = random.nextInt(100)+2;
-      //}
-     
     }
 
     /**
@@ -63,12 +55,12 @@ public class GameEngine extends Actor
         else{
         switch(chosedOperation){
           case "gt":
-           queryResult = (computerGuess > enterendInput);
-           queryBuilder.append("> " + enterendInput);
+           queryResult = (computerGuess >= enterendInput);
+           queryBuilder.append(">= " + enterendInput);
            break;
           case "lt":
-           queryResult = (computerGuess < enterendInput);
-           queryBuilder.append("< " + enterendInput);
+           queryResult = (computerGuess <= enterendInput);
+           queryBuilder.append("<= " + enterendInput);
            break;
           case "mod":
            queryResult =(computerGuess % enterendInput) == 0;

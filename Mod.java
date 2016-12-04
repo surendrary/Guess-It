@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Mod extends Actor
 {
+    private OperatorStrategy os;
+    
     /**
      * Act - do whatever the Mod wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,9 +26,13 @@ public class Mod extends Actor
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
           Greenfoot.playSound("button_click.mp3");
-          getWorldOfType(GamePlayWorld.class).operator="mod";
+          getWorldOfType(GamePlayWorld.class).operator= os.getOperationMode();
           LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
           box.updateImage("Divisible By");
       }   
     }    
+    
+    public void addStrategy(OperatorStrategy os){
+        this.os = os;
+    }
 }

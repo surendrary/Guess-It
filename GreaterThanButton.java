@@ -10,6 +10,7 @@ public class GreaterThanButton extends Actor
 {
     // instance variables - replace the example below with your own
     private int x;
+    private OperatorStrategy os;
 
     /**
      * Constructor for objects of class GreaterThanButton
@@ -31,10 +32,14 @@ public class GreaterThanButton extends Actor
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
           Greenfoot.playSound("button_click.mp3");
-          getWorldOfType(GamePlayWorld.class).operator="gt";
+          getWorldOfType(GamePlayWorld.class).operator= os.getOperationMode();
           LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
           box.updateImage("Greater Than");
         }   
         
+    }
+    
+    public void addStrategy(OperatorStrategy os){
+        this.os = os;
     }
 }

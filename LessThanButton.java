@@ -9,7 +9,7 @@ public class LessThanButton extends Actor
 {
     // instance variables - replace the example below with your own
     private int x;
-
+    private OperatorStrategy os;
     /**
      * Constructor for objects of class LessThanButton
      */
@@ -24,9 +24,13 @@ public class LessThanButton extends Actor
       MouseInfo mouseInfo = Greenfoot.getMouseInfo();
       if(Greenfoot.mouseClicked(this)){
           Greenfoot.playSound("button_click.mp3");
-          getWorldOfType(GamePlayWorld.class).operator="lt";
+          getWorldOfType(GamePlayWorld.class).operator= os.getOperationMode();
           LabelBox box = getWorldOfType(GamePlayWorld.class).getObjects(LabelBox.class).get(0);
           box.updateImage("Less Than");
         }   
+    }
+    
+    public void addStrategy(OperatorStrategy os){
+        this.os = os;
     }
 }

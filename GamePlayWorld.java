@@ -30,8 +30,8 @@ public class GamePlayWorld extends World
     GreenfootSound backgroundMusic = new GreenfootSound("background_loop.mp3");
     public static String gameName = "";
     public static int time_elapsed = 0; 
-
     
+    private OperatorStrategy operationStrategy;
     
     /**
      * Constructor for objects of class GamePlayWorld.
@@ -60,7 +60,6 @@ public class GamePlayWorld extends World
     private void setUpGame()
     {
         this.numberOfGuess = 0;
-        // starting time recorded
         long startTime = System.currentTimeMillis();
         if(gameLevel.equalsIgnoreCase("hard"))
             gameEngine.maxTurns = 10;           
@@ -68,25 +67,28 @@ public class GamePlayWorld extends World
         setBackground(backgroundImage); 
         GreenfootImage game_Name = new GreenfootImage("game_title_header.png");
         getBackground().drawImage(game_Name, backgroundImage.getWidth()/2 - 85, 10);
-        
-        //RUSHIN-----------------------------for name in top left
-        //for name in top left
+
         getBackground().setFont(new Font("", Font.BOLD | Font.ITALIC, 25));
         getBackground().drawString(this.playerName,5,30);;
         
         Message Score = new Message();
         Score.setImage(new GreenfootImage("Guess: " + numberOfGuess, 34, Color.RED, Color.BLACK));
         this.addObject(Score,getWidth()-100,30);
-        
-       // getBackground().setFont(new Font("", Font.BOLD, 25));
-       //getBackground().drawString(this.playerName+",start guessing!", backgroundImage.getWidth()/2 - 50, 120);
-        
+
         Greenfoot.setSpeed(50);
-        LessThanButton LessThan=new LessThanButton();
-        addObject(LessThan,100,200);
-        GreaterThanButton GreaterThan=new GreaterThanButton();
-        addObject(GreaterThan,250,200);
+        LessThanStrategy lessThanStrategy = new LessThanStrategy();
+        LessThanButton lessThan=new LessThanButton();
+        lessThan.addStrategy(lessThanStrategy);
+        addObject(lessThan,100,200);
+        
+        GreaterThanStrategy greaterThanStrategy = new GreaterThanStrategy();
+        GreaterThanButton greaterThan=new GreaterThanButton();
+        greaterThan.addStrategy(greaterThanStrategy);
+        addObject(greaterThan,250,200);
+        
+        ModStrategy modStrategy = new ModStrategy();
         Mod mod = new Mod();
+        mod.addStrategy(modStrategy);
         addObject(mod,400,200);
         
         CloseButton closebutton = new CloseButton();
@@ -94,7 +96,6 @@ public class GamePlayWorld extends World
         
         label = new LabelBox();
         addObject(label, getWidth()/2-230, (getHeight()/2)+10);
-        ////
         inputBox = new StringInputBox();
         addObject(inputBox, getWidth()/2-50, (getHeight()/2)+ 10);
         

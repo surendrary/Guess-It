@@ -1,0 +1,28 @@
+1.	Title: User should be able to compete with other players.  
+	User Story:As a player, i can join a multiplayer game so that i can compete with other players.
+	Requirement: The user must be provided with the game id by the host to join the multiplayer game.
+
+2.	Title:  User should be able to host the game.
+	User Story: As a user, i can host multiple players in a multi player session to compete against each other.
+	Requirement Specification: When the user clicks on host game, he can enter a unique id. 
+  
+  
+3.	Title: User should be able to play a single player game. 
+	User Story: As a player, i can play the game a single player game so that i can improve my game.
+	Requirement Specification: When the user clicks on  single player option, he must be redirected to the game.
+
+	  
+4. 	Title: User should be able to guess the number in different ways.
+	User Story:As a user, i can interact with the UI so that i can understand different ways to solve the problem. 
+	Requirement Specification: Different options like greater than, less than and modulus must be provided to the player.
+
+
+Error Scenario: 
+
+5.	Title: Minimum moves error scenario. 
+	User Story: As a user, i can restart the game once i know the answer so that i can complete it in minimum moves.
+	Requirement Specification: In a multiplayer scenario, the host must continue to host the game. 
+ 
+6. 	Title: Previous data error scenario.
+	User Story: As a player, i need to restart the game so that i can remove the previous moves sequence.    
+	Requirement Specification: In a single player scenario, previous game data is available even when the game is reset. The game needs to be closed to resolve the issue. 

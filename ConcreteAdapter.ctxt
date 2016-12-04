@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=ConcreteAdapter
+comment1.params=hbr
+comment1.target=void\ getConcreteCommand(HostButtonReceiver)
+numComments=2

@@ -26,6 +26,8 @@ public class HostGameButton extends Actor
     public void act()
     {
       if(Greenfoot.mousePressed(this)){
+		  Adapter a = new ConcreteAdapter();
+		  a.getConcreteCommand(new HostButtonReceiver(username));
           command = new ConcreteCommand();
             command.setReceiver(new HostButtonReceiver(username));
             
@@ -35,5 +37,6 @@ public class HostGameButton extends Actor
             in.invoke(); 
           
       }
+      }
     }
-    }
+

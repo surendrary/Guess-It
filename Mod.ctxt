@@ -6,4 +6,6 @@ comment1.target=Mod()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Mod\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ act()
-numComments=3
+comment3.params=os
+comment3.target=void\ addStrategy(OperatorStrategy)
+numComments=4

@@ -46,8 +46,7 @@ public class GuessButton extends Actor
                  {
                      Map.Entry<String,Boolean> entry = it.next();
                      it.remove();
-                     System.out.println("a key removed");
-                    }
+                 }
                  resultBox.updateImage(queryTest.toString());
                
          
@@ -56,8 +55,6 @@ public class GuessButton extends Actor
           GameEngine gameEngine = getWorldOfType(GamePlayWorld.class).gameEngine;
           gameEngine.enterendInput = getWorldOfType(GamePlayWorld.class).enteredNumber;
           gameEngine.computerGuess = getWorldOfType(GamePlayWorld.class).computerGuess;
-          
-          System.out.println("gameEngine.computerGuess"+gameEngine.computerGuess+"gameEngine.enterendInput"+gameEngine.enterendInput);
           int numberOfGuess = getWorldOfType(GamePlayWorld.class).numberOfGuess;
           String playerName = getWorldOfType(GamePlayWorld.class).playerName;
           String gameName = getWorldOfType(GamePlayWorld.class).gameName;
@@ -66,11 +63,6 @@ public class GuessButton extends Actor
           if(gameEngine.enterendInput <1 )
             JOptionPane.showMessageDialog(null, "Please Enter a number to guess");
           else if(gameEngine.enterendInput==gameEngine.computerGuess){
-              
-            //fetch time taken by the user to make the right guess
-            System.out.println("Time taken: "+ getWorldOfType(GamePlayWorld.class).time_elapsed + " seconds");
-            
-            
             Message sampleMessage = new Message();
             Greenfoot.playSound("congratulations.mp3");
             sampleMessage.setText("Cogratulations!!!!.Your Guess is Right");

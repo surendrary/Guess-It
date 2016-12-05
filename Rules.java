@@ -15,7 +15,7 @@ public class Rules extends Actor
      */
     public Rules()
     {
-        GreenfootImage image = new GreenfootImage("Rules.jpg");
+        GreenfootImage image = new GreenfootImage("rules.png");
         image.scale(40,40);
         setImage(image);
     }
